@@ -3,43 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Primary SEO -->
-  <title>CannaLaunch | Business Optimization Services for Retail Operators</title>
-  <meta name="description" content="CannaLaunch helps retail operators fix inconsistent execution, improve manager accountability, and build operational systems that actually work — built by a real operator." />
-  <meta name="keywords" content="business optimization services, retail operations consulting, SOP consulting, workflow optimization, operational systems, manager accountability, retail business consulting" />
-  <meta name="author" content="CannaLaunch" />
-  <link rel="canonical" href="https://www.cannalaunch.org" />
-
-  <!-- Open Graph (Facebook, LinkedIn, iMessage previews) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.cannalaunch.org" />
-  <meta property="og:title" content="CannaLaunch | Business Optimization Services for Retail Operators" />
-  <meta property="og:description" content="Fix inconsistent execution, improve manager accountability, and build operational systems that actually work. Built by a real operator, for operators." />
-  <meta property="og:image" content="https://www.cannalaunch.org/cannalaunch-logo.png" />
-
-  <!-- Twitter/X Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://www.cannalaunch.org" />
-  <meta name="twitter:title" content="CannaLaunch | Business Optimization Services for Retail Operators" />
-  <meta name="twitter:description" content="Fix inconsistent execution, improve manager accountability, and build operational systems that actually work. Built by a real operator, for operators." />
-  <meta name="twitter:image" content="https://www.cannalaunch.org/cannalaunch-logo.png" />
-
-  <!-- Structured Data (Google Rich Results) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "CannaLaunch",
-    "url": "https://www.cannalaunch.org",
-    "logo": "https://www.cannalaunch.org/cannalaunch-logo.png",
-    "description": "Business optimization services that help retail operators fix SOP execution, improve manager accountability, and build consistent operational workflows.",
-    "email": "cannalaunch@gmail.com",
-    "areaServed": "US",
-    "serviceType": "Business Optimization Services"
-  }
-  </script>
-
+  <title>CannaLaunch — Cannabis Operations Consulting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -113,6 +77,32 @@
     }
 
     .nav-brand .logo-fallback span { color: #89b896; }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .nav-shop {
+      background: transparent;
+      color: #89b896;
+      border: 1px solid rgba(137,184,150,0.45);
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-shop:hover {
+      background: rgba(137,184,150,0.12);
+      border-color: #89b896;
+      color: #ffffff;
+    }
 
     .nav-cta {
       background: #ffffff;
@@ -545,6 +535,34 @@
       line-height: 1.7;
     }
 
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+
+    .btn-shop-light {
+      display: inline-block;
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid rgba(255,255,255,0.45);
+      padding: 13px 34px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    .btn-shop-light:hover {
+      border-color: #ffffff;
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+
     .btn-primary-light {
       display: inline-block;
       background: #ffffff;
@@ -588,6 +606,8 @@
       .outcomes-grid  { grid-template-columns: 1fr 1fr; }
       nav { padding: 0 4%; height: 60px; }
       .nav-brand .logo { max-height: 48px; max-width: 160px; }
+      .nav-shop { display: none; }
+      .cta-buttons { flex-direction: column; align-items: center; }
       section { padding: 70px 4%; }
       .hero { padding: 120px 4% 80px; }
     }
@@ -610,15 +630,18 @@
       />
       <span class="logo-fallback" style="display:none;">Canna<span>Launch</span></span>
     </a>
-    <a href="mailto:cannalaunch@gmail.com" class="nav-cta">Book a Discovery Call</a>
+    <div class="nav-actions">
+      <a href="cannalaunch_shop.html" class="nav-shop">Shop Systems</a>
+      <a href="mailto:cannalaunch@gmail.com" class="nav-cta">Book a Discovery Call</a>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <span class="hero-eyebrow">Business Optimization Services</span>
-      <h1>Operational systems for teams that need less chaos and <em>more consistency</em></h1>
-      <p class="hero-sub">CannaLaunch helps retail operators clean up SOP execution, improve accountability, and make daily operations more consistent — without adding unnecessary complexity.</p>
+      <span class="hero-eyebrow">Cannabis Operations Consulting</span>
+      <h1>Operational systems for dispensaries that need less chaos and <em>more consistency</em></h1>
+      <p class="hero-sub">CannaLaunch helps cannabis retailers clean up SOP execution, improve accountability, and make daily operations more consistent — without adding unnecessary complexity.</p>
       <div class="hero-actions">
         <a href="mailto:cannalaunch@gmail.com" class="btn-primary">Book a Discovery Call</a>
         <span class="hero-note">No commitment. Just a conversation.</span>
@@ -628,20 +651,20 @@
 
   <!-- TRUST BAR -->
   <div class="trust-bar">
-    <p>Built by an operator, for operators — <strong>rooted in real experience running regulated retail operations in Alamogordo, NM</strong></p>
+    <p>Built by an operator, for operators — <strong>rooted in real experience at 1912 Cannabis, Alamogordo NM</strong></p>
   </div>
 
   <!-- PROBLEM -->
   <section class="problem">
     <div class="section-inner">
       <span class="section-label">The Real Problem</span>
-      <h2 class="section-title">Most operations don't have an effort problem.<br>They have a systems problem.</h2>
+      <h2 class="section-title">Most dispensaries don't have an effort problem.<br>They have a systems problem.</h2>
       <div class="problem-grid">
         <div class="problem-copy">
           <p>Your staff is showing up. Your managers are putting in the work. You already have SOPs — maybe a whole binder of them.</p>
           <p>But the problems keep coming back. The same mistakes, the same inconsistencies, the same conversations you've had ten times before.</p>
-          <p><strong>That's not a people problem. That's an operational gap.</strong> The distance between having a process on paper and actually running that process consistently across every team member, every shift, every day.</p>
-          <p>That gap is where most businesses lose ground — and most consulting advice doesn't touch it.</p>
+          <p><strong>That's not a people problem. That's an operational gap.</strong> The distance between having a process on paper and actually running that process consistently across every staff member, every shift, every day.</p>
+          <p>That gap is where most dispensaries lose ground — and most consulting advice doesn't touch it.</p>
         </div>
         <ul class="pain-list">
           <li>
@@ -694,7 +717,7 @@
     <div class="section-inner">
       <span class="section-label">What We Do</span>
       <h2 class="section-title">We close the gap between your SOPs and your actual operations</h2>
-      <p class="section-lead">CannaLaunch works directly with operators and retail teams to make the way your business actually runs match the way you want it to run — clearly, consistently, every shift.</p>
+      <p class="section-lead">CannaLaunch works directly with dispensary operators to make the way your store actually runs match the way you want it to run — clearly, consistently, every shift.</p>
       <div class="solution-cards">
         <div class="sol-card">
           <span class="sol-number">01</span>
@@ -724,12 +747,12 @@
   <section class="credibility">
     <div class="cred-inner">
       <span class="quote-mark">&ldquo;</span>
-      <p class="cred-quote">After building and refining operational systems within a highly regulated retail environment at <strong>1912 in Alamogordo, New Mexico</strong>, I started CannaLaunch to help other operators create more consistent and scalable workflows. We dealt with the same things you're probably dealing with now — inconsistent execution, accountability gaps, and operational issues that just kept recycling. After cleaning those up internally and seeing the difference it made, I knew it could work for other teams too. <strong>This isn't theory. It's what actually worked.</strong></p>
+      <p class="cred-quote">I'm one of the owners at <strong>1912 Cannabis in Alamogordo, New Mexico</strong>. We dealt with the same things you're probably dealing with now — inconsistent execution, accountability gaps, and operational issues that just kept recycling. After cleaning those up internally and seeing the difference it made, I started CannaLaunch to help other dispensaries do the same thing. <strong>This isn't theory. It's what actually worked.</strong></p>
       <div class="cred-badge">
         <div class="cred-avatar">CL</div>
         <div class="cred-badge-text">
           <span class="cred-badge-name">CannaLaunch Founder</span>
-          <span class="cred-badge-title">Owner, 1912 — Alamogordo, NM</span>
+          <span class="cred-badge-title">Owner, 1912 Cannabis — Alamogordo, NM</span>
         </div>
       </div>
     </div>
@@ -768,7 +791,7 @@
     <div class="section-inner">
       <span class="section-label">What Changes</span>
       <h2 class="section-title">What better operations actually looks like</h2>
-      <p class="section-lead">These are the things operators and business owners notice once their operations are running the way they should.</p>
+      <p class="section-lead">These are the things dispensary operators notice once their operations are running the way they should.</p>
       <div class="outcomes-grid">
         <div class="outcome-item">
           <h4>Cleaner Day-to-Day Operations</h4>
@@ -802,13 +825,16 @@
   <section class="final-cta" id="cta">
     <h2 class="section-title">If your operation needs a reset, let's talk.</h2>
     <p>If you're dealing with inconsistent execution, repeated issues, or managers who aren't holding the line — let's take a look at how things are actually running and see if a reset makes sense. No pitch, no pressure. Just an honest conversation.</p>
-    <a href="mailto:cannalaunch@gmail.com" class="btn-primary-light">Book a Discovery Call</a>
+    <div class="cta-buttons">
+      <a href="cannalaunch_shop.html" class="btn-shop-light">Shop Systems</a>
+      <a href="mailto:cannalaunch@gmail.com" class="btn-primary-light">Book a Discovery Call</a>
+    </div>
     <p class="cta-note">Free, no-commitment call. Operator to operator.</p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p><strong>CannaLaunch</strong> &nbsp;·&nbsp; Business Optimization Services &nbsp;·&nbsp; Built on real experience at 1912, Alamogordo, NM</p>
+    <p><strong>CannaLaunch</strong> &nbsp;·&nbsp; Cannabis Operations Consulting &nbsp;·&nbsp; Built on real experience at 1912 Cannabis, Alamogordo, NM</p>
   </footer>
 
 </body>
