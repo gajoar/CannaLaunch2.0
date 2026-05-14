@@ -1,0 +1,687 @@
+<!--
+  CannaLaunch — Built From Real Operations
+  Drop-in HTML for cannalaunch.org / built-from-real-operations
+  Design system: Montserrat • #0B2818 / #1A3A2E / #EAF1EC / #F4F5F3
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Built From Real Operations — CannaLaunch</title>
+
+  <!-- Montserrat (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --deep-green: #0B2818;
+      --accent-green: #1A3A2E;
+      --soft-sage: #EAF1EC;
+      --warm-gray: #F4F5F3;
+      --alt-row: #F7F8F6;
+      --border: #CFD6CF;
+      --muted: #5C6B5E;
+      --body: #111111;
+      --on-dark: #FFFFFF;
+      --on-dark-2: #B8C7B9;
+      --mint: #6FD09B;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--body);
+      background: #FFFFFF;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "kern" 1;
+    }
+    .cl-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ---------- Top Nav (shared across pages) ---------- */
+    .cl-nav {
+      background: var(--deep-green);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .cl-nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .cl-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--on-dark);
+    }
+    .cl-logo img {
+      display: block;
+      height: 38px;
+      width: auto;
+      max-width: 240px;
+    }
+    .cl-logo .cl-wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--on-dark);
+      display: none;
+    }
+    /* If logo image fails to load, JS swaps to wordmark fallback */
+
+    .cl-nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .cl-nav-links a {
+      color: var(--on-dark-2);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 8px 0;
+      transition: color 0.15s ease;
+    }
+    .cl-nav-links a:hover,
+    .cl-nav-links a[aria-current="page"] {
+      color: var(--on-dark);
+    }
+    @media (max-width: 700px) {
+      .cl-nav-links { gap: 16px; }
+      .cl-nav-links a { font-size: 11px; }
+    }
+
+    /* ---------- Hero ---------- */
+    .cl-hero {
+      background: var(--deep-green);
+      color: var(--on-dark);
+      padding: 96px 0 96px;
+      text-align: center;
+    }
+    .cl-hero .tag {
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--on-dark-2);
+      margin-bottom: 22px;
+    }
+    .cl-hero h1 {
+      font-size: 54px;
+      line-height: 1.1;
+      font-weight: 700;
+      margin: 0 auto 22px;
+      letter-spacing: -0.015em;
+      max-width: 900px;
+    }
+    .cl-hero p {
+      font-size: 17px;
+      color: var(--on-dark-2);
+      max-width: 740px;
+      margin: 0 auto 36px;
+    }
+    @media (max-width: 700px) {
+      .cl-hero { padding: 64px 0 72px; }
+      .cl-hero h1 { font-size: 36px; }
+    }
+
+    /* ---------- Section base ---------- */
+    .cl-section { padding: 88px 0; border-bottom: 1px solid var(--border); }
+    .cl-section:last-of-type { border-bottom: 0; }
+    .cl-section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 14px;
+    }
+    .cl-section h2 {
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--accent-green);
+      margin: 0 0 14px;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .cl-section .lead {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 0 36px;
+      font-style: italic;
+    }
+
+    /* ---------- Performance KPI cards ---------- */
+    .cl-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 4px 0 36px;
+    }
+    @media (max-width: 800px) {
+      .cl-kpi-grid { grid-template-columns: 1fr; }
+    }
+    .cl-kpi {
+      background: var(--deep-green);
+      color: var(--on-dark);
+      padding: 22px 24px;
+      border: 1px solid var(--accent-green);
+    }
+    .cl-kpi .num {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--mint);
+    }
+    .cl-kpi .lbl {
+      margin-top: 6px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--on-dark-2);
+      font-weight: 600;
+    }
+
+    /* ---------- Chart panel ---------- */
+    .cl-chart {
+      background: var(--deep-green);
+      border: 1px solid var(--accent-green);
+      padding: 28px 24px 18px;
+      margin-bottom: 32px;
+    }
+    .cl-chart-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .cl-chart-head .ttl {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--on-dark);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .cl-chart-head .sub {
+      font-size: 12px;
+      color: var(--on-dark-2);
+      letter-spacing: 0.04em;
+    }
+    .cl-chart svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .cl-chart-foot {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--on-dark-2);
+      font-style: italic;
+      letter-spacing: 0.02em;
+    }
+
+    /* ---------- Supporting bullet list ---------- */
+    .cl-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 28px;
+    }
+    @media (max-width: 700px) { .cl-bullets { grid-template-columns: 1fr; } }
+    .cl-bullets li {
+      padding-left: 22px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+    .cl-bullets li::before {
+      content: '—';
+      color: var(--accent-green);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ---------- Story narrative block ---------- */
+    .cl-story {
+      max-width: 760px;
+      font-size: 16px;
+      color: var(--body);
+      line-height: 1.75;
+    }
+    .cl-story p { margin: 0 0 18px; }
+    .cl-story p:last-child { margin: 0; }
+    .cl-story strong { color: var(--accent-green); font-weight: 700; }
+
+    /* ---------- Solution cards ---------- */
+    .cl-solutions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    @media (max-width: 900px) {
+      .cl-solutions { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .cl-solutions { grid-template-columns: 1fr; }
+    }
+    .cl-sol {
+      border: 1px solid var(--border);
+      background: #FFFFFF;
+      padding: 26px 24px;
+      transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+    }
+    .cl-sol:hover {
+      box-shadow: 0 12px 28px rgba(11, 40, 24, 0.08);
+      transform: translateY(-2px);
+      border-color: var(--accent-green);
+    }
+    .cl-sol .num {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--accent-green);
+      margin-bottom: 12px;
+    }
+    .cl-sol h3 {
+      font-size: 18px;
+      color: var(--accent-green);
+      margin: 0 0 8px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .cl-sol p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--body);
+      line-height: 1.6;
+    }
+
+    /* ---------- Philosophy quotes ---------- */
+    .cl-philosophy {
+      background: var(--deep-green);
+      color: var(--on-dark);
+    }
+    .cl-philosophy .cl-section-label { color: var(--mint); }
+    .cl-philosophy h2 { color: var(--on-dark); }
+    .cl-philosophy .lead { color: var(--on-dark-2); }
+    .cl-quotes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+      margin-top: 12px;
+    }
+    @media (max-width: 800px) { .cl-quotes { grid-template-columns: 1fr; } }
+    .cl-quote {
+      border-left: 4px solid var(--mint);
+      padding: 4px 0 4px 28px;
+    }
+    .cl-quote .q-mark {
+      font-family: Georgia, serif;
+      font-size: 64px;
+      line-height: 0.6;
+      color: var(--mint);
+      display: block;
+      margin-bottom: 18px;
+    }
+    .cl-quote p {
+      font-size: 22px;
+      line-height: 1.45;
+      color: var(--on-dark);
+      font-weight: 500;
+      margin: 0;
+      letter-spacing: -0.005em;
+    }
+
+    /* ---------- Buttons ---------- */
+    .cl-buy {
+      display: inline-block;
+      background: var(--accent-green);
+      color: var(--on-dark) !important;
+      text-decoration: none;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 22px;
+      border: 1px solid var(--accent-green);
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .cl-buy:hover {
+      background: var(--deep-green);
+      border-color: var(--deep-green);
+    }
+    .cl-buy.ghost-on-dark {
+      background: transparent;
+      border-color: var(--on-dark);
+      color: var(--on-dark) !important;
+    }
+    .cl-buy.ghost-on-dark:hover {
+      background: var(--on-dark);
+      color: var(--deep-green) !important;
+      border-color: var(--on-dark);
+    }
+    .cl-buy.mint {
+      background: var(--mint);
+      border-color: var(--mint);
+      color: var(--deep-green) !important;
+    }
+    .cl-buy.mint:hover {
+      background: #5ABF89;
+      border-color: #5ABF89;
+      color: var(--deep-green) !important;
+    }
+
+    /* ---------- Final CTA ---------- */
+    .cl-cta {
+      background: var(--deep-green);
+      color: var(--on-dark);
+      padding: 88px 0;
+      text-align: center;
+    }
+    .cl-cta .cl-section-label { color: var(--mint); }
+    .cl-cta h2 { color: var(--on-dark); font-size: 36px; margin: 0 0 12px; }
+    .cl-cta p { color: var(--on-dark-2); font-size: 16px; margin: 0 0 32px; }
+    .cl-cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ---------- Footer strip ---------- */
+    .cl-cred {
+      padding: 22px 0;
+      background: var(--warm-gray);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ TOP NAV ============ -->
+  <header class="cl-nav">
+    <div class="cl-nav-inner">
+      <a class="cl-logo" href="index.html" aria-label="CannaLaunch home">
+        <img src="cannalaunch_logo_v2.png" alt="CannaLaunch"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
+        <span class="cl-wordmark">CANNALAUNCH</span>
+      </a>
+      <nav class="cl-nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="built-from-real-operations.html" aria-current="page">Why CannaLaunch</a>
+        <a href="cannalaunch_shop.html">Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ SECTION 1 · HERO ============ -->
+  <section class="cl-hero">
+    <div class="cl-wrap">
+      <div class="tag">Operator-Built · Operational Systems</div>
+      <h1>Built From Real Operations.</h1>
+      <p>Operational systems developed through real-world retail execution, inventory management, KPI tracking, staff optimization, and scalable business operations.</p>
+      <a class="cl-buy mint" href="cannalaunch_shop.html">Explore Operational Systems →</a>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2 · PERFORMANCE ============ -->
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <div class="cl-section-label">01 · Real Operational Data</div>
+      <h2>Revenue growth built through real retail operations.</h2>
+      <p class="lead">Monthly revenue trajectory across multi-year retail execution — driven by KPI tracking, inventory discipline, and operational workflow design.</p>
+
+      <div class="cl-kpi-grid">
+        <div class="cl-kpi">
+          <div class="num">$3.4M+</div>
+          <div class="lbl">Total Operational Revenue</div>
+        </div>
+        <div class="cl-kpi">
+          <div class="num">$151,604</div>
+          <div class="lbl">Peak Monthly Revenue</div>
+        </div>
+        <div class="cl-kpi">
+          <div class="num">39 mo.</div>
+          <div class="lbl">Operating History</div>
+        </div>
+      </div>
+
+      <div class="cl-chart" role="img" aria-label="Monthly revenue trajectory from 2023 through April 2026, growing from approximately $7K to $151K with a notable acceleration in late 2025 and Q1 2026.">
+        <div class="cl-chart-head">
+          <div class="ttl">Monthly Revenue Trajectory</div>
+          <div class="sub">2023 — Apr 2026</div>
+        </div>
+
+        <svg viewBox="0 0 900 360" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+          <!-- Gridlines -->
+          <g stroke="#1A3A2E" stroke-width="1" opacity="0.55">
+            <line x1="60" y1="60"  x2="880" y2="60"  />
+            <line x1="60" y1="115" x2="880" y2="115" />
+            <line x1="60" y1="170" x2="880" y2="170" />
+            <line x1="60" y1="225" x2="880" y2="225" />
+            <line x1="60" y1="280" x2="880" y2="280" />
+          </g>
+
+          <!-- Y-axis labels -->
+          <g font-family="Montserrat, sans-serif" font-size="11" fill="#B8C7B9" text-anchor="end">
+            <text x="52" y="64">$160K</text>
+            <text x="52" y="119">$120K</text>
+            <text x="52" y="174">$80K</text>
+            <text x="52" y="229">$40K</text>
+            <text x="52" y="284">$0</text>
+          </g>
+
+          <!-- X-axis labels -->
+          <g font-family="Montserrat, sans-serif" font-size="11" fill="#B8C7B9" text-anchor="middle">
+            <text x="80"  y="305">2023</text>
+            <text x="288" y="305">2024</text>
+            <text x="496" y="305">2025</text>
+            <text x="704" y="305">2026</text>
+          </g>
+
+          <!-- Area fill under line -->
+          <defs>
+            <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#6FD09B" stop-opacity="0.32" />
+              <stop offset="100%" stop-color="#6FD09B" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <path d="
+            M 70,272
+            L 90,259 110,242 130,217 150,168 170,184 190,222 210,225
+            L 230,210 250,196 270,189 290,183 310,170 330,167 350,167 370,168
+            L 390,170 410,171 430,168 450,167 470,168 490,170 510,172 530,176
+            L 550,180 570,184 590,178 610,176 630,160 650,153 670,146 690,148
+            L 710,150 730,138 750,135 770,130 790,108 810,93 830,68 850,52
+            L 850,280 70,280 Z" fill="url(#areaGrad)" />
+
+          <!-- Revenue line -->
+          <path d="
+            M 70,272
+            L 90,259 110,242 130,217 150,168 170,184 190,222 210,225
+            L 230,210 250,196 270,189 290,183 310,170 330,167 350,167 370,168
+            L 390,170 410,171 430,168 450,167 470,168 490,170 510,172 530,176
+            L 550,180 570,184 590,178 610,176 630,160 650,153 670,146 690,148
+            L 710,150 730,138 750,135 770,130 790,108 810,93 830,68 850,52"
+            fill="none" stroke="#6FD09B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" />
+
+          <!-- Peak marker -->
+          <circle cx="850" cy="52" r="6" fill="#6FD09B" stroke="#0B2818" stroke-width="2" />
+          <g font-family="Montserrat, sans-serif" fill="#FFFFFF">
+            <rect x="724" y="22" width="118" height="36" rx="4" fill="#1A3A2E" stroke="#6FD09B" />
+            <text x="783" y="38" font-size="11" font-weight="700" text-anchor="middle" fill="#6FD09B">APR 2026</text>
+            <text x="783" y="52" font-size="13" font-weight="700" text-anchor="middle">$151,604</text>
+          </g>
+        </svg>
+
+        <div class="cl-chart-foot">
+          Built from KPI tracking, inventory optimization, staff execution systems, and reporting workflows.
+        </div>
+      </div>
+
+      <ul class="cl-bullets">
+        <li>Multi-million dollar operational history across multiple revenue cycles</li>
+        <li>Six-figure monthly revenue periods sustained through repeatable execution</li>
+        <li>KPI-driven operational growth — every decision rooted in measured data</li>
+        <li>Inventory and operational optimization systems built for daily use</li>
+        <li>Real-world implementation experience inside high-volume retail operations</li>
+        <li>Scalable infrastructure refined across years of operational iteration</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3 · OPERATIONAL STORY ============ -->
+  <section class="cl-section" style="background:var(--warm-gray);">
+    <div class="cl-wrap">
+      <div class="cl-section-label">02 · The Operational Story</div>
+      <h2>From reactive management to systems-driven execution.</h2>
+
+      <div class="cl-story">
+        <p>The operation didn't start with frameworks, scoreboards, or playbooks. It started <strong>without structure</strong> — the same place most growing retail businesses begin. Decisions were reactive. Inventory was guessed at. KPIs lived in someone's head. Performance varied shift to shift, week to week.</p>
+
+        <p>Systems weren't borrowed from a textbook. They were <strong>built through operational experience</strong> — refined inside live, high-volume retail operations where every adjustment had immediate revenue consequences. What worked stayed. What didn't was rebuilt.</p>
+
+        <p><strong>KPI tracking changed decision-making.</strong> Once revenue, transactions, conversion, and labor data became visible at the right cadence, guesswork disappeared. Underperformance got caught early instead of explained late.</p>
+
+        <p><strong>Inventory systems reduced inefficiencies.</strong> Days-on-hand calculations, sell-through tracking, and disciplined receiving workflows replaced reorder instinct with reorder math — protecting margin and freeing working capital.</p>
+
+        <p><strong>Operational frameworks improved consistency.</strong> Open/close cadences, shift accountability, weekly planning, and audit-grade documentation removed the variation that quietly erodes performance.</p>
+
+        <p>The end result: <strong>systems that reduced reactive management</strong>. The operator stops firefighting and starts engineering the next quarter of performance. That's the discipline encoded in every CannaLaunch product.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4 · WHAT THESE SOLVE ============ -->
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <div class="cl-section-label">03 · What These Systems Are Built to Solve</div>
+      <h2>Seven operator pain points. One operating system.</h2>
+      <p class="lead">Each CannaLaunch product targets a specific failure mode that quietly drains performance in growing retail operations.</p>
+
+      <div class="cl-solutions">
+
+        <div class="cl-sol">
+          <div class="num">01</div>
+          <h3>Inventory Visibility</h3>
+          <p>Replace gut-feel buying with sell-through, days-on-hand, and margin math. Stop carrying dead stock and stop missing top-movers.</p>
+        </div>
+
+        <div class="cl-sol">
+          <div class="num">02</div>
+          <h3>KPI &amp; Reporting Systems</h3>
+          <p>Daily, weekly, and monthly visibility into the numbers that move performance — revenue, transactions, AOV, conversion, labor.</p>
+        </div>
+
+        <div class="cl-sol">
+          <div class="num">03</div>
+          <h3>Staff Accountability</h3>
+          <p>Shift-level scorecards, training trackers, and coaching cadences that turn variable team performance into measurable execution.</p>
+        </div>
+
+        <div class="cl-sol">
+          <div class="num">04</div>
+          <h3>Workflow Consistency</h3>
+          <p>Open/close checklists, intake protocols, and operating cadences that make every shift look like the best shift.</p>
+        </div>
+
+        <div class="cl-sol">
+          <div class="num">05</div>
+          <h3>Operational Stability</h3>
+          <p>Audit logs, incident reporting, and issue-resolution frameworks that hold the operation together through growth and turnover.</p>
+        </div>
+
+        <div class="cl-sol">
+          <div class="num">06</div>
+          <h3>Revenue Optimization</h3>
+          <p>Promotion performance tracking and product analytics that compound margin gains across every category and channel.</p>
+        </div>
+
+        <div class="cl-sol">
+          <div class="num">07</div>
+          <h3>Operational Scalability</h3>
+          <p>Documented systems that survive a second location, a manager change, or a 3× revenue lift without breaking the operation.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 5 · PHILOSOPHY ============ -->
+  <section class="cl-section cl-philosophy">
+    <div class="cl-wrap">
+      <div class="cl-section-label">04 · Operational Philosophy</div>
+      <h2>Operational clarity, not operational complexity.</h2>
+      <p class="lead">The CannaLaunch system is built on two convictions earned through years of retail execution.</p>
+
+      <div class="cl-quotes">
+        <div class="cl-quote">
+          <span class="q-mark">&ldquo;</span>
+          <p>Simple systems executed consistently outperform complicated systems nobody follows.</p>
+        </div>
+        <div class="cl-quote">
+          <span class="q-mark">&ldquo;</span>
+          <p>The goal is not complexity. The goal is operational clarity and repeatable execution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 6 · FINAL CTA ============ -->
+  <section class="cl-cta">
+    <div class="cl-wrap">
+      <div class="cl-section-label">05 · Get Started</div>
+      <h2>Explore the operational systems.</h2>
+      <p>The foundation, the playbook, and the templates — all built from real operations.</p>
+
+      <div class="cl-cta-buttons">
+        <a class="cl-buy mint" href="cannalaunch_shop.html">View The Operators Blueprint →</a>
+        <a class="cl-buy ghost-on-dark" href="cannalaunch_shop.html">View The Full Operations Playbook →</a>
+        <a class="cl-buy ghost-on-dark" href="cannalaunch_shop.html">Shop Operational Templates →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="cl-cred">
+    Operational Systems &amp; Business Resources
+  </footer>
+
+</body>
+</html>
