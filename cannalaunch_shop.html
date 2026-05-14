@@ -1,0 +1,648 @@
+<!--
+  CannaLaunch — Shop Section
+  Drop-in HTML for cannalaunch.org
+  Design system: Montserrat • #0B2818 / #1A3A2E / #EAF1EC / #F4F5F3
+  Payhip: replace every PAYHIP_* placeholder with the actual product ID from your Payhip dashboard.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CannaLaunch — Shop</title>
+
+  <!-- Montserrat (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --deep-green: #0B2818;
+      --accent-green: #1A3A2E;
+      --soft-sage: #EAF1EC;
+      --warm-gray: #F4F5F3;
+      --alt-row: #F7F8F6;
+      --border: #CFD6CF;
+      --muted: #5C6B5E;
+      --body: #111111;
+      --on-dark: #FFFFFF;
+      --on-dark-2: #B8C7B9;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--body);
+      background: #FFFFFF;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "kern" 1;
+    }
+
+    .cl-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ---------- Hero ---------- */
+    .cl-hero {
+      background: var(--deep-green);
+      color: var(--on-dark);
+      padding: 72px 0 64px;
+      text-align: center;
+    }
+    .cl-hero .tag {
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--on-dark-2);
+      margin-bottom: 18px;
+    }
+    .cl-hero h1 {
+      font-size: 46px;
+      line-height: 1.15;
+      font-weight: 700;
+      margin: 0 0 14px;
+      letter-spacing: -0.01em;
+    }
+    .cl-hero p {
+      font-size: 17px;
+      color: var(--on-dark-2);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ---------- Section base ---------- */
+    .cl-section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+    .cl-section:last-of-type { border-bottom: 0; }
+
+    .cl-section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 14px;
+    }
+    .cl-section h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent-green);
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+    }
+    .cl-section .lead {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 740px;
+      margin: 0 0 36px;
+      font-style: italic;
+    }
+
+    /* ---------- Decision table ---------- */
+    .cl-decision {
+      background: var(--soft-sage);
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .cl-decision h3 {
+      margin: 0 0 16px;
+      font-size: 14px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+    }
+    .cl-decision table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    .cl-decision th, .cl-decision td {
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cl-decision th {
+      background: var(--accent-green);
+      color: var(--on-dark);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+    .cl-decision tr:last-child td { border-bottom: 0; }
+    .cl-decision td:first-child { font-weight: 600; color: var(--accent-green); }
+
+    /* ---------- Product grid ---------- */
+    .cl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .cl-grid.two { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 900px) {
+      .cl-grid, .cl-grid.two { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Product card ---------- */
+    .cl-card {
+      border: 1px solid var(--border);
+      background: #FFFFFF;
+      padding: 26px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.18s ease, transform 0.18s ease;
+    }
+    .cl-card:hover {
+      box-shadow: 0 12px 28px rgba(11, 40, 24, 0.08);
+      transform: translateY(-2px);
+    }
+    .cl-card .kicker {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .cl-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--accent-green);
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+    .cl-card .desc {
+      font-size: 14px;
+      color: var(--body);
+      flex-grow: 1;
+      margin: 0 0 18px;
+      line-height: 1.6;
+    }
+    .cl-card .price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .cl-card .price {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent-green);
+      letter-spacing: -0.01em;
+    }
+
+    /* ---------- Buy button (Payhip-compatible) ---------- */
+    .payhip-buy-button,
+    .cl-buy {
+      display: inline-block;
+      background: var(--accent-green);
+      color: var(--on-dark) !important;
+      text-decoration: none;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 12px 20px;
+      border: 1px solid var(--accent-green);
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .payhip-buy-button:hover,
+    .cl-buy:hover {
+      background: var(--deep-green);
+      border-color: var(--deep-green);
+      color: var(--on-dark) !important;
+    }
+
+    /* ---------- Bundle (BEST VALUE) ---------- */
+    .cl-bundle {
+      position: relative;
+      background: var(--soft-sage);
+      border: 1px solid var(--accent-green);
+      padding: 32px 32px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+    .cl-bundle.featured {
+      box-shadow: 0 18px 38px rgba(11, 40, 24, 0.12);
+      border-top: 4px solid var(--deep-green);
+      padding-top: 36px;
+    }
+    .cl-bundle .badge {
+      position: absolute;
+      top: -14px;
+      left: 24px;
+      background: var(--accent-green);
+      color: var(--on-dark);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 6px 14px;
+    }
+    .cl-bundle.featured .badge {
+      background: var(--deep-green);
+    }
+    .cl-bundle.featured .price { font-size: 32px; }
+    .cl-bundle h3 {
+      font-size: 22px;
+      color: var(--accent-green);
+      margin: 6px 0 8px;
+    }
+    .cl-bundle ul {
+      margin: 12px 0 18px;
+      padding-left: 0;
+      list-style: none;
+      font-size: 14px;
+    }
+    .cl-bundle ul li {
+      padding: 6px 0 6px 22px;
+      position: relative;
+    }
+    .cl-bundle ul li::before {
+      content: '—';
+      color: var(--accent-green);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+    .cl-bundle .price-row {
+      padding-top: 14px;
+      border-top: 1px solid var(--accent-green);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .cl-bundle .price { font-size: 28px; font-weight: 700; color: var(--accent-green); }
+
+    /* ---------- Final CTA ---------- */
+    .cl-cta {
+      background: var(--deep-green);
+      color: var(--on-dark);
+      padding: 64px 0;
+      text-align: center;
+    }
+    .cl-cta h2 { color: var(--on-dark); font-size: 30px; margin: 0 0 10px; }
+    .cl-cta p { color: var(--on-dark-2); font-size: 16px; margin: 0 0 28px; }
+    .cl-cta .cl-buy {
+      background: transparent;
+      border: 1px solid var(--on-dark);
+      color: var(--on-dark) !important;
+      padding: 14px 28px;
+    }
+    .cl-cta .cl-buy:hover { background: var(--on-dark); color: var(--deep-green) !important; }
+
+    /* ---------- Credibility strip ---------- */
+    .cl-cred {
+      padding: 22px 0;
+      background: var(--warm-gray);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ HERO ============ -->
+  <header class="cl-hero">
+    <div class="cl-wrap">
+      <div class="tag">Operational Systems for Smarter Retail Operations</div>
+      <h1>The CannaLaunch Shop</h1>
+      <p>Operating systems, templates, and playbooks built for workflow consistency, team accountability, and operational execution across high-volume retail operations.</p>
+    </div>
+  </header>
+
+  <!-- ============ Credibility ============ -->
+  <div class="cl-cred">
+    Built from real retail operations generating consistent 6-figure monthly revenue.
+  </div>
+
+  <!-- ============ DECISION TABLE ============ -->
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <div class="cl-section-label">01 · How to Choose</div>
+      <h2>Find what fits your stage.</h2>
+      <p class="lead">Learn → Fix → Build → Implement → Scale. Start where you are.</p>
+
+      <div class="cl-decision">
+        <h3>Operator Decision Guide</h3>
+        <table>
+          <thead>
+            <tr><th>If you want…</th><th>Start with</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Clarity on where you're losing money</td><td>Operators Blueprint — $49</td></tr>
+            <tr><td>Plug-and-play operator tools</td><td>Core / Operational / Compliance Templates</td></tr>
+            <tr><td>A full operating system end-to-end</td><td>Full Operations Playbook — $149</td></tr>
+            <tr><td>Everything in one package</td><td>Full Operations System — $249</td></tr>
+            <tr><td>Done-for-you implementation</td><td>Book a consultation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDATIONAL PUBLICATIONS ============ -->
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <div class="cl-section-label">02 · Foundational Publications</div>
+      <h2>Start with the foundation and the playbook.</h2>
+      <p class="lead">The 11-page strategic operations blueprint and the 41-page operational implementation playbook — built from real-world retail operations experience.</p>
+
+      <div class="cl-grid two">
+
+        <div class="cl-card">
+          <div class="kicker">Publication · Foundation</div>
+          <h3>Operators Blueprint</h3>
+          <div class="desc">An 11-page strategic operations blueprint for retail and service businesses. The foundational operational systems framework — diagnostic, structural, and built for operators, managers, and growing teams to install operational visibility from day one.</div>
+          <div class="price-row">
+            <div class="price">$49</div>
+            <a class="payhip-buy-button" data-theme="none" data-product="PAYHIP_BLUEPRINT_ID" href="https://payhip.com/b/PAYHIP_BLUEPRINT_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Publication · Full Playbook</div>
+          <h3>Full Operations Playbook</h3>
+          <div class="desc">The complete 41-page operations playbook for scalable business systems. An implementation-focused operational guide built from real-world operational systems — engineered for installation, training, accountability, and execution at scale.</div>
+          <div class="price-row">
+            <div class="price">$149</div>
+            <a class="payhip-buy-button" data-theme="none" data-product="PAYHIP_MANUAL_ID" href="https://payhip.com/b/PAYHIP_MANUAL_ID">Buy Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CORE SYSTEMS ============ -->
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <div class="cl-section-label">03 · Core Systems — $29 each</div>
+      <h2>The operational metrics every retail business should track.</h2>
+      <p class="lead">Performance-grade templates that turn daily store data into operating decisions.</p>
+
+      <div class="cl-grid">
+
+        <div class="cl-card">
+          <div class="kicker">Core Template</div>
+          <h3>KPI Dashboard</h3>
+          <div class="desc">Daily operational visibility for revenue, transactions, labor, and conversion metrics.</div>
+          <div class="price-row">
+            <div class="price">$29</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_KPI_ID" href="https://payhip.com/b/PAYHIP_KPI_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Core Template</div>
+          <h3>Inventory Performance Tracker</h3>
+          <div class="desc">Track sell-through, turn rate, and dead inventory before it kills margin.</div>
+          <div class="price-row">
+            <div class="price">$29</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_INV_PERF_ID" href="https://payhip.com/b/PAYHIP_INV_PERF_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Core Template</div>
+          <h3>Sales &amp; Product Performance Report</h3>
+          <div class="desc">Track sales trends, product movement, and operational performance to support smarter business decisions.</div>
+          <div class="price-row">
+            <div class="price">$29</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_SALES_PERF_ID" href="https://payhip.com/b/PAYHIP_SALES_PERF_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Core Template</div>
+          <h3>Days-on-Hand Calculator</h3>
+          <div class="desc">Forecast inventory runway and avoid stockouts or overbuying.</div>
+          <div class="price-row">
+            <div class="price">$29</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_DOH_ID" href="https://payhip.com/b/PAYHIP_DOH_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Core Template</div>
+          <h3>COGS &amp; Margin Tracker</h3>
+          <div class="desc">Understand true profitability by category, SKU, and vendor.</div>
+          <div class="price-row">
+            <div class="price">$29</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_COGS_ID" href="https://payhip.com/b/PAYHIP_COGS_ID">Buy Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPERATIONAL SYSTEMS ============ -->
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <div class="cl-section-label">04 · Operational Systems — $19 each</div>
+      <h2>The day-to-day discipline that protects margin.</h2>
+      <p class="lead">Daily and weekly operator tools. Built for shift leads, store managers, and owners.</p>
+
+      <div class="cl-grid">
+
+        <div class="cl-card">
+          <div class="kicker">Operational</div>
+          <h3>Daily Operations Checklist (Open/Close)</h3>
+          <div class="desc">Standardized opening and closing workflows for operational consistency.</div>
+          <div class="price-row">
+            <div class="price">$19</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_OPENCLOSE_ID" href="https://payhip.com/b/PAYHIP_OPENCLOSE_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Operational</div>
+          <h3>Inventory Audit Checklist &amp; Log</h3>
+          <div class="desc">Structured audit system for reconciliation and shrink control.</div>
+          <div class="price-row">
+            <div class="price">$19</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_AUDIT_ID" href="https://payhip.com/b/PAYHIP_AUDIT_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Operational</div>
+          <h3>Operational Issue Resolution Log</h3>
+          <div class="desc">Root-cause analysis and resolution framework for documenting, investigating, and closing operational issues across staffing, inventory, compliance, and workflow.</div>
+          <div class="price-row">
+            <div class="price">$19</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_ISSUE_RES_ID" href="https://payhip.com/b/PAYHIP_ISSUE_RES_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Operational</div>
+          <h3>Shift Performance Tracker</h3>
+          <div class="desc">Monitor shift-level sales, conversion, and operational accountability.</div>
+          <div class="price-row">
+            <div class="price">$19</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_SHIFT_ID" href="https://payhip.com/b/PAYHIP_SHIFT_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Operational</div>
+          <h3>Staff Training Tracker</h3>
+          <div class="desc">Track onboarding, certifications, coaching, and competency reviews.</div>
+          <div class="price-row">
+            <div class="price">$19</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_TRAIN_ID" href="https://payhip.com/b/PAYHIP_TRAIN_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Operational</div>
+          <h3>Weekly Operations Planner</h3>
+          <div class="desc">Manager planning and execution system for weekly operational control.</div>
+          <div class="price-row">
+            <div class="price">$19</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_WEEKLY_ID" href="https://payhip.com/b/PAYHIP_WEEKLY_ID">Buy Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPLIANCE & MANAGEMENT TOOLS ============ -->
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <div class="cl-section-label">05 · Compliance &amp; Management Tools — $15 each</div>
+      <h2>Documentation, accountability, and operational discipline.</h2>
+      <p class="lead">Inspection-ready records paired with operator-grade management tools.</p>
+
+      <div class="cl-grid">
+
+        <div class="cl-card">
+          <div class="kicker">Compliance</div>
+          <h3>Compliance Audit Log</h3>
+          <div class="desc">Maintain inspection-ready compliance tracking and documentation.</div>
+          <div class="price-row">
+            <div class="price">$15</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_COMPLIANCE_ID" href="https://payhip.com/b/PAYHIP_COMPLIANCE_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Compliance</div>
+          <h3>Incident Report Template</h3>
+          <div class="desc">Standardized reporting for workplace and operational incidents.</div>
+          <div class="price-row">
+            <div class="price">$15</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_INCIDENT_ID" href="https://payhip.com/b/PAYHIP_INCIDENT_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Management</div>
+          <h3>Customer Feedback / Issue Log</h3>
+          <div class="desc">Capture complaints, resolutions, and recurring operational issues.</div>
+          <div class="price-row">
+            <div class="price">$15</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_FEEDBACK_ID" href="https://payhip.com/b/PAYHIP_FEEDBACK_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-card">
+          <div class="kicker">Management</div>
+          <h3>Promotion Performance Tracker</h3>
+          <div class="desc">Track campaign effectiveness, promotions, and offer performance.</div>
+          <div class="price-row">
+            <div class="price">$15</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_PROMO_ID" href="https://payhip.com/b/PAYHIP_PROMO_ID">Buy Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BUNDLES (BEST VALUE) ============ -->
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <div class="cl-section-label">06 · Bundles</div>
+      <h2>Save by installing the full system.</h2>
+      <p class="lead">Built for operators who want proven operational systems instead of piecing everything together manually.</p>
+
+      <div class="cl-grid two">
+
+        <div class="cl-bundle">
+          <span class="badge">Best Value • Templates</span>
+          <h3>Full Template System</h3>
+          <ul>
+            <li>All Core Systems templates</li>
+            <li>All Operational Systems templates</li>
+            <li>All Compliance &amp; Support templates</li>
+            <li>Editable operational documents</li>
+            <li>Built for real operational workflows</li>
+            <li>Free template updates as the system evolves</li>
+          </ul>
+          <div class="price-row">
+            <div class="price">$149</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_TEMPLATE_BUNDLE_ID" href="https://payhip.com/b/PAYHIP_TEMPLATE_BUNDLE_ID">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="cl-bundle featured">
+          <span class="badge">Most Popular • Full System</span>
+          <h3>Full Operations System</h3>
+          <ul>
+            <li>Operators Blueprint — 11-page strategic operations framework</li>
+            <li>Full Operations Playbook — 41-page implementation playbook</li>
+            <li>Full Template System — all templates included</li>
+            <li>Built from real retail operations experience</li>
+            <li>Designed for implementation, training, and scalability</li>
+            <li>Free updates as the system evolves</li>
+          </ul>
+          <div class="price-row">
+            <div class="price">$249</div>
+            <a class="payhip-buy-button" data-product="PAYHIP_OPS_BUNDLE_ID" href="https://payhip.com/b/PAYHIP_OPS_BUNDLE_ID">Buy Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA → CONSULTING ============ -->
+  <section class="cl-cta">
+    <div class="cl-wrap">
+      <h2>Want the systems installed for you?</h2>
+      <p>Operations audits, pilot engagements, full operational resets, and ongoing accountability support — built around your business.</p>
+      <a class="cl-buy" href="/consulting">Explore Consulting →</a>
+    </div>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer class="cl-cred">
+    Operational Systems &amp; Business Resources
+  </footer>
+
+  <!-- ============ Payhip overlay script (required, single instance) ============ -->
+  <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+
+</body>
+</html>
