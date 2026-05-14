@@ -47,6 +47,69 @@
       padding: 0 28px;
     }
 
+    /* ---------- Top Nav (shared across pages) ---------- */
+    .cl-nav {
+      background: var(--deep-green);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .cl-nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .cl-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--on-dark);
+    }
+    .cl-logo img {
+      display: block;
+      height: 38px;
+      width: auto;
+      max-width: 240px;
+    }
+    .cl-logo .cl-wordmark {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--on-dark);
+      display: none;
+    }
+    .cl-nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .cl-nav-links a {
+      color: var(--on-dark-2);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 8px 0;
+      transition: color 0.15s ease;
+    }
+    .cl-nav-links a:hover,
+    .cl-nav-links a[aria-current="page"] {
+      color: var(--on-dark);
+    }
+    @media (max-width: 700px) {
+      .cl-nav-links { gap: 16px; }
+      .cl-nav-links a { font-size: 11px; }
+    }
+
     /* ---------- Hero ---------- */
     .cl-hero {
       background: var(--deep-green);
@@ -316,6 +379,22 @@
 </head>
 
 <body>
+
+  <!-- ============ TOP NAV ============ -->
+  <header class="cl-nav">
+    <div class="cl-nav-inner">
+      <a class="cl-logo" href="index.html" aria-label="CannaLaunch home">
+        <img src="cannalaunch_logo_v2.png" alt="CannaLaunch"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
+        <span class="cl-wordmark">CANNALAUNCH</span>
+      </a>
+      <nav class="cl-nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="built-from-real-operations.html">Why CannaLaunch</a>
+        <a href="cannalaunch_shop.html" aria-current="page">Shop</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- ============ HERO ============ -->
   <header class="cl-hero">
