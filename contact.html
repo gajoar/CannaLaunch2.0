@@ -108,11 +108,64 @@
       background: #89b896;
       color: #1a2e20;
     }
+    /* ─── HAMBURGER & MOBILE MENU ──────────────── */
+    .cl-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-direction: column;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cl-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.2s;
+      transform-origin: center;
+    }
+    .cl-hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .cl-hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .cl-hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .cl-mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0; right: 0;
+      background: #0a0a0a;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      z-index: 99;
+      flex-direction: column;
+      padding: 4px 5% 20px;
+    }
+    .cl-mobile-menu.is-open { display: flex; }
+    .cl-mobile-menu a {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      letter-spacing: 0.01em;
+    }
+    .cl-mobile-menu a:last-child { border-bottom: none; }
+    .cl-mobile-menu a.cl-mobile-cta {
+      color: #89b896;
+      font-weight: 700;
+    }
     @media (max-width: 600px) {
       .cl-nav { height: 60px; padding: 0 4%; }
       .cl-nav-spacer { height: 60px; }
       .cl-logo img { height: 40px; max-width: 160px; }
-      .cl-nav-links a:not(.cl-nav-cta) { display: none; }
+      .cl-nav-links { display: none; }
+      .cl-hamburger { display: flex; }
     }
     /* NAV */
     
@@ -310,8 +363,16 @@
       <a href="cannalaunch_shop.html">Shop Systems</a>
       <a href="mailto:cannalaunch@gmail.com" class="cl-nav-cta">Book a Discovery Call</a>
     </nav>
+    <button class="cl-hamburger" aria-label="Open menu" aria-expanded="false" onclick="clToggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
   </header>
   <div class="cl-nav-spacer"></div>
+  <div class="cl-mobile-menu" id="cl-mobile-menu" aria-hidden="true">
+    <a href="built-from-real-operations.html">Why CannaLaunch</a>
+    <a href="cannalaunch_shop.html">Shop Systems</a>
+    <a href="mailto:cannalaunch@gmail.com" class="cl-mobile-cta">Book a Discovery Call</a>
+  </div>
 
 
 
