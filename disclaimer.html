@@ -38,9 +38,11 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ─── NAV ─── */
+    
+
+    /* ─── NAV ─────────────────────────────────── */
     .cl-nav {
-      background: var(--black);
+      background: #000000;
       border-bottom: 1px solid rgba(255,255,255,0.08);
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -62,13 +64,13 @@
       display: block;
       height: 100px;
       width: auto;
-      max-width: 440px;
+      max-width: 300px;
       background: transparent;
     }
     .cl-logo .cl-wordmark {
       font-weight: 700;
       font-size: 1.2rem;
-      color: var(--white);
+      color: #ffffff;
       display: none;
     }
     .cl-nav-links {
@@ -79,10 +81,10 @@
     }
     .cl-nav-links a {
       background: transparent;
-      color: var(--sage);
+      color: #89b896;
       border: 1px solid rgba(137,184,150,0.45);
       padding: 9px 20px;
-      border-radius: var(--radius);
+      border-radius: 8px;
       font-size: 0.875rem;
       font-weight: 600;
       text-decoration: none;
@@ -91,22 +93,26 @@
     }
     .cl-nav-links a:hover {
       background: rgba(137,184,150,0.12);
-      border-color: var(--sage);
-      color: var(--white);
+      border-color: #89b896;
+      color: #ffffff;
     }
-    .cl-nav-links a.cta {
-      background: var(--white);
-      color: var(--green-dark);
+    .cl-nav-links a.cl-nav-cta {
+      background: #ffffff;
+      color: #1a2e20;
       border: none;
       font-weight: 700;
     }
-    .cl-nav-links a.cta:hover { background: var(--sage); }
-    @media (max-width: 768px) {
+    .cl-nav-links a.cl-nav-cta:hover {
+      background: #89b896;
+      color: #1a2e20;
+    }
+    @media (max-width: 600px) {
       .cl-nav { height: 60px; padding: 0 4%; }
       .cl-nav-spacer { height: 60px; }
       .cl-logo img { height: 40px; max-width: 160px; }
-      .cl-nav-links a:not(.cta) { display: none; }
+      .cl-nav-links a:not(.cl-nav-cta) { display: none; }
     }
+    
 
     /* ─── PAGE HEADER ─── */
     .page-header {
@@ -182,7 +188,7 @@
       padding: 52px 5% 38px;
       text-align: center;
     }
-    .footer-nav {
+        .footer-nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -229,10 +235,12 @@
     <nav class="cl-nav-links" aria-label="Primary">
       <a href="built-from-real-operations.html">Why CannaLaunch</a>
       <a href="cannalaunch_shop.html">Shop Systems</a>
-      <a href="mailto:cannalaunch@gmail.com" class="cta">Book a Discovery Call</a>
+      <a href="mailto:cannalaunch@gmail.com" class="cl-nav-cta">Book a Discovery Call</a>
     </nav>
   </header>
   <div class="cl-nav-spacer"></div>
+
+
 
   <!-- PAGE HEADER -->
   <section class="page-header">
