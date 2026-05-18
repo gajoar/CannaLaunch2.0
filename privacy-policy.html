@@ -22,17 +22,89 @@
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    .cl-nav { background: var(--black); border-bottom: 1px solid rgba(255,255,255,0.08); position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 160px; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    /* ─── NAV ─────────────────────────────────── */
+    .cl-nav {
+      background: #000000;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+    }
     .cl-nav-spacer { height: 160px; }
-    .cl-logo { display: inline-flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-    .cl-logo img { display: block; height: 100px; width: auto; max-width: 440px; background: transparent; }
-    .cl-logo .cl-wordmark { font-weight: 700; font-size: 1.2rem; color: var(--white); display: none; }
-    .cl-nav-links { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-    .cl-nav-links a { background: transparent; color: var(--sage); border: 1px solid rgba(137,184,150,0.45); padding: 9px 20px; border-radius: var(--radius); font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s, border-color 0.2s, color 0.2s; white-space: nowrap; }
-    .cl-nav-links a:hover { background: rgba(137,184,150,0.12); border-color: var(--sage); color: var(--white); }
-    .cl-nav-links a.cta { background: var(--white); color: var(--green-dark); border: none; font-weight: 700; }
-    .cl-nav-links a.cta:hover { background: var(--sage); }
-    @media (max-width: 768px) { .cl-nav { height: 60px; padding: 0 4%; } .cl-nav-spacer { height: 60px; } .cl-logo img { height: 40px; max-width: 160px; } .cl-nav-links a:not(.cta) { display: none; } }
+    .cl-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .cl-logo img {
+      display: block;
+      height: 100px;
+      width: auto;
+      max-width: 300px;
+      background: transparent;
+    }
+    .cl-logo .cl-wordmark {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #ffffff;
+      display: none;
+    }
+    .cl-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .cl-nav-links a {
+      background: transparent;
+      color: #89b896;
+      border: 1px solid rgba(137,184,150,0.45);
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .cl-nav-links a:hover {
+      background: rgba(137,184,150,0.12);
+      border-color: #89b896;
+      color: #ffffff;
+    }
+    .cl-nav-links a.cl-nav-cta {
+      background: #ffffff;
+      color: #1a2e20;
+      border: none;
+      font-weight: 700;
+    }
+    .cl-nav-links a.cl-nav-cta:hover {
+      background: #89b896;
+      color: #1a2e20;
+    }
+    @media (max-width: 600px) {
+      .cl-nav { height: 60px; padding: 0 4%; }
+      .cl-nav-spacer { height: 60px; }
+      .cl-logo img { height: 40px; max-width: 160px; }
+      .cl-nav-links a:not(.cl-nav-cta) { display: none; }
+    }
+    
     .page-header { background: var(--green-dark); padding: 72px 5% 64px; color: var(--white); }
     .page-header-inner { max-width: 760px; }
     .page-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 16px; }
@@ -49,7 +121,15 @@
     .content-section a:hover { text-decoration: underline; }
     @media (max-width: 600px) { .content-section { padding: 24px 20px; } .page-content { padding: 52px 4% 64px; } }
     .site-footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.07); padding: 52px 5% 38px; text-align: center; }
-    .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 32px; margin-bottom: 28px; padding: 0; list-style: none; }
+        .footer-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 32px;
+      margin-bottom: 28px;
+      padding: 0;
+      list-style: none;
+    }
     .footer-nav a { color: rgba(255,255,255,0.42); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em; transition: color 0.18s; }
     .footer-nav a:hover, .footer-nav a[aria-current="page"] { color: var(--sage); }
     .footer-rule { width: 48px; height: 1px; background: rgba(255,255,255,0.1); margin: 0 auto 24px; }
@@ -58,20 +138,23 @@
   </style>
 </head>
 <body>
+
+  <!-- NAV -->
   <header class="cl-nav">
     <a class="cl-logo" href="index.html" aria-label="CannaLaunch home">
-      <img src="cannalaunch-logo.png" alt="CannaLaunch" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
+      <img src="cannalaunch-logo.png" alt="CannaLaunch"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
       <span class="cl-wordmark">CannaLaunch</span>
     </a>
     <nav class="cl-nav-links" aria-label="Primary">
       <a href="built-from-real-operations.html">Why CannaLaunch</a>
       <a href="cannalaunch_shop.html">Shop Systems</a>
-      <a href="mailto:cannalaunch@gmail.com" class="cta">Book a Discovery Call</a>
+      <a href="mailto:cannalaunch@gmail.com" class="cl-nav-cta">Book a Discovery Call</a>
     </nav>
   </header>
   <div class="cl-nav-spacer"></div>
 
-  <section class="page-header">
+<section class="page-header">
     <div class="page-header-inner">
       <span class="page-tag">Legal</span>
       <h1>Privacy Policy</h1>
