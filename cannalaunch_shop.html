@@ -421,6 +421,27 @@
       padding: 14px 28px;
     }
     .cl-cta .cl-buy:hover { background: var(--on-dark); color: var(--deep-green) !important; }
+    .cl-cta-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #1a2e20;
+      padding: 15px 36px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .cl-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    }
+    .cl-cta-note {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.35);
+    }
 
     /* ---------- Credibility strip ---------- */
     .cl-cred {
@@ -811,7 +832,8 @@
     <div class="cl-wrap">
       <h2>Want the systems installed for you?</h2>
       <p>Operations audits, pilot engagements, full operational resets, and ongoing accountability support — built around your business.</p>
-      <a class="cl-buy" href="/consulting">Explore Consulting →</a>
+      <a class="cl-cta-btn" href="mailto:cannalaunch@gmail.com">Book a Discovery Call</a>
+      <p class="cl-cta-note">Free, no-commitment call. Operator to operator.</p>
     </div>
   </section>
 
