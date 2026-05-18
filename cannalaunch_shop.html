@@ -69,22 +69,8 @@
 
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
-    body {
-      font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color: var(--body);
-      background: #FFFFFF;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      font-feature-settings: "kern" 1;
-    }
 
-    .cl-wrap {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    /* ---------- Top Nav (shared across pages) ---------- */
+    /* ─── NAV ─────────────────────────────────── */
     .cl-nav {
       background: #000000;
       border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -97,9 +83,7 @@
       justify-content: space-between;
       padding: 0 5%;
     }
-    .cl-nav-spacer {
-      height: 160px;
-    }
+    .cl-nav-spacer { height: 160px; }
     .cl-logo {
       display: inline-flex;
       align-items: center;
@@ -110,15 +94,12 @@
       display: block;
       height: 100px;
       width: auto;
-      max-width: 440px;
+      max-width: 300px;
       background: transparent;
     }
     .cl-logo .cl-wordmark {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 18px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 1.2rem;
       color: #ffffff;
       display: none;
     }
@@ -139,11 +120,8 @@
       text-decoration: none;
       transition: background 0.2s, border-color 0.2s, color 0.2s;
       white-space: nowrap;
-      letter-spacing: normal;
-      text-transform: none;
     }
-    .cl-nav-links a:hover,
-    .cl-nav-links a[aria-current="page"] {
+    .cl-nav-links a:hover {
       background: rgba(137,184,150,0.12);
       border-color: #89b896;
       color: #ffffff;
@@ -158,12 +136,38 @@
       background: #89b896;
       color: #1a2e20;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       .cl-nav { height: 60px; padding: 0 4%; }
       .cl-nav-spacer { height: 60px; }
       .cl-logo img { height: 40px; max-width: 160px; }
       .cl-nav-links a:not(.cl-nav-cta) { display: none; }
     }
+    body {
+      font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--body);
+      background: #FFFFFF;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "kern" 1;
+    }
+
+    .cl-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ---------- Top Nav (shared across pages) ---------- */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     /* ---------- Hero ---------- */
     .cl-hero {
@@ -438,7 +442,7 @@
       text-align: center;
       font-family: 'Montserrat', system-ui, sans-serif;
     }
-    .footer-nav {
+        .footer-nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -470,7 +474,7 @@
       margin: 0 auto;
     }
     @media (max-width: 600px) {
-      .footer-nav { gap: 4px 20px; }
+      .footer-
     }
   </style>
 </head>
@@ -478,21 +482,23 @@
 <body>
 
   <!-- ============ TOP NAV ============ -->
+
+  <!-- NAV -->
   <header class="cl-nav">
     <a class="cl-logo" href="index.html" aria-label="CannaLaunch home">
       <img src="cannalaunch-logo.png" alt="CannaLaunch"
            onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
-      <span class="cl-wordmark">CANNALAUNCH</span>
+      <span class="cl-wordmark">CannaLaunch</span>
     </a>
     <nav class="cl-nav-links" aria-label="Primary">
       <a href="built-from-real-operations.html">Why CannaLaunch</a>
-      <a href="cannalaunch_shop.html" aria-current="page">Shop Systems</a>
+      <a href="cannalaunch_shop.html">Shop Systems</a>
       <a href="mailto:cannalaunch@gmail.com" class="cl-nav-cta">Book a Discovery Call</a>
     </nav>
   </header>
   <div class="cl-nav-spacer"></div>
 
-  <!-- ============ HERO ============ -->
+<!-- ============ HERO ============ -->
   <header class="cl-hero">
     <div class="cl-wrap">
       <div class="tag">Operational Systems for Smarter Retail Operations</div>
