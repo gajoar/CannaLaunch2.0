@@ -104,12 +104,18 @@
       background: none;
       border: none;
       cursor: pointer;
-      padding: 8px;
+      padding: 10px 8px;
       flex-direction: column;
       gap: 5px;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      min-width: 44px;
+      min-height: 44px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+      z-index: 101;
     }
     .cl-hamburger span {
       display: block;
@@ -204,7 +210,7 @@
       <a href="cannalaunch_shop.html">Shop Systems</a>
       <a href="mailto:cannalaunch@gmail.com" class="cl-nav-cta">Book a Discovery Call</a>
     </nav>
-    <button class="cl-hamburger" aria-label="Open menu" aria-expanded="false" onclick="clToggleMenu(this)">
+    <button class="cl-hamburger" id="cl-hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="cl-mobile-menu" onclick="clToggleMenu(this)">
       <span></span><span></span><span></span>
     </button>
   </header>
@@ -297,5 +303,34 @@
     <div class="footer-rule"></div>
     <p class="footer-copy">© 2026 CannaLaunch. Educational business systems and operational resources. Not legal, tax, accounting, or regulatory advice.</p>
   </footer>
+<script>
+(function () {
+  function clToggleMenu(btn) {
+    var menu = document.getElementById('cl-mobile-menu');
+    if (!menu) return;
+    var open = menu.classList.toggle('is-open');
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+  }
+  // expose to inline onclick
+  window.clToggleMenu = clToggleMenu;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // close menu when any mobile nav link is tapped
+    document.querySelectorAll('.cl-mobile-menu a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var menu = document.getElementById('cl-mobile-menu');
+        var btn  = document.querySelector('.cl-hamburger');
+        if (!menu || !btn) return;
+        menu.classList.remove('is-open');
+        btn.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+      });
+    });
+  });
+}());
+</script>
 </body>
 </html>
