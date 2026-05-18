@@ -11,7 +11,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
-  <title>CannaLaunch — Shop</title>
+
+  <!-- Primary SEO -->
+  <title>CannaLaunch Shop — Operations Systems, Templates & Execution Playbooks</title>
+  <meta name="description" content="Browse CannaLaunch's library of retail operations systems, SOP templates, KPI frameworks, accountability tools, and workflow playbooks built for consistent execution across retail teams." />
+  <meta name="keywords" content="retail operations templates, SOP templates, operations playbooks, KPI frameworks, workflow systems, accountability tools, retail execution, operations store" />
+  <meta name="author" content="CannaLaunch" />
+  <link rel="canonical" href="https://www.cannalaunch.org/cannalaunch_shop.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.cannalaunch.org/cannalaunch_shop.html" />
+  <meta property="og:title" content="CannaLaunch Shop — Operations Systems, Templates & Execution Playbooks" />
+  <meta property="og:description" content="Operational templates, KPI frameworks, SOP systems, and retail execution playbooks built from real operations. Ready-to-deploy tools for retail teams." />
+  <meta property="og:image" content="https://www.cannalaunch.org/cannalaunch-logo.png" />
+  <meta property="og:site_name" content="CannaLaunch" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.cannalaunch.org/cannalaunch_shop.html" />
+  <meta name="twitter:title" content="CannaLaunch Shop — Operations Systems, Templates & Execution Playbooks" />
+  <meta name="twitter:description" content="Operational templates, KPI frameworks, SOP systems, and retail execution playbooks built from real operations. Ready-to-deploy tools for retail teams." />
+  <meta name="twitter:image" content="https://www.cannalaunch.org/cannalaunch-logo.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "CannaLaunch Shop",
+    "url": "https://www.cannalaunch.org/cannalaunch_shop.html",
+    "logo": "https://www.cannalaunch.org/favicon.png",
+    "description": "Retail operations systems, SOP templates, KPI frameworks, and workflow playbooks built for consistent team execution.",
+    "email": "cannalaunch@gmail.com",
+    "areaServed": "US"
+  }
+  </script>
 
   <!-- Montserrat (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -395,6 +430,48 @@
       letter-spacing: 0.06em;
       font-style: italic;
     }
+    /* ─── SITE FOOTER ───────────────────────── */
+    .site-footer {
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 52px 5% 38px;
+      text-align: center;
+      font-family: 'Montserrat', system-ui, sans-serif;
+    }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 32px;
+      margin-bottom: 28px;
+      padding: 0;
+      list-style: none;
+    }
+    .footer-nav a {
+      color: rgba(255,255,255,0.42);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.18s;
+    }
+    .footer-nav a:hover { color: #89b896; }
+    .footer-rule {
+      width: 48px;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 0 auto 24px;
+    }
+    .footer-copy {
+      font-size: 0.77rem;
+      color: rgba(255,255,255,0.26);
+      line-height: 1.8;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+      .footer-nav { gap: 4px 20px; }
+    }
   </style>
 </head>
 
@@ -732,9 +809,17 @@
     </div>
   </section>
 
-  <!-- ============ Footer ============ -->
-  <footer class="cl-cred">
-    Operational Systems &amp; Business Resources
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-rule"></div>
+    <p class="footer-copy">© 2026 CannaLaunch. Educational business systems and operational resources. Not legal, tax, accounting, or regulatory advice.</p>
   </footer>
   </body>
 </html>
