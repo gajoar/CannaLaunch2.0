@@ -5,7 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
-  <title>CannaLaunch | Business Optimization Services for Retail Operators</title>
+
+  <!-- Primary SEO -->
+  <title>CannaLaunch — Retail Operations Systems & Workflow Optimization</title>
+  <meta name="description" content="CannaLaunch provides operational systems, KPI frameworks, workflow templates, accountability tools, and retail execution playbooks built from real-world operational experience." />
+  <meta name="keywords" content="retail operations systems, workflow optimization, operational accountability, SOP implementation, retail execution playbooks, KPI frameworks, operations consulting, retail workflow templates" />
+  <meta name="author" content="CannaLaunch" />
+  <link rel="canonical" href="https://www.cannalaunch.org" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.cannalaunch.org" />
+  <meta property="og:title" content="CannaLaunch — Retail Operations Systems & Workflow Optimization" />
+  <meta property="og:description" content="Operational systems, KPI frameworks, workflow templates, and retail execution playbooks built from real-world operational experience. Less chaos. More consistency." />
+  <meta property="og:image" content="https://www.cannalaunch.org/cannalaunch-logo.png" />
+  <meta property="og:site_name" content="CannaLaunch" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.cannalaunch.org" />
+  <meta name="twitter:title" content="CannaLaunch — Retail Operations Systems & Workflow Optimization" />
+  <meta name="twitter:description" content="Operational systems, KPI frameworks, workflow templates, and retail execution playbooks built from real-world operational experience. Less chaos. More consistency." />
+  <meta name="twitter:image" content="https://www.cannalaunch.org/cannalaunch-logo.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "CannaLaunch",
+    "url": "https://www.cannalaunch.org",
+    "logo": "https://www.cannalaunch.org/favicon.png",
+    "description": "CannaLaunch provides operational systems, KPI frameworks, workflow templates, accountability tools, and retail execution playbooks built from real-world operational experience.",
+    "email": "cannalaunch@gmail.com",
+    "areaServed": "US",
+    "serviceType": "Retail Operations Systems & Workflow Optimization"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -590,15 +627,47 @@
     }
 
     /* ─── FOOTER ──────────────────────────────── */
-    footer {
-      background: #111610;
-      color: rgba(255,255,255,0.35);
+    /* ─── SITE FOOTER ───────────────────────── */
+    .site-footer {
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 52px 5% 38px;
       text-align: center;
-      padding: 28px 5%;
-      font-size: 0.82rem;
     }
-
-    footer strong { color: rgba(255,255,255,0.55); }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 32px;
+      margin-bottom: 28px;
+      padding: 0;
+      list-style: none;
+    }
+    .footer-nav a {
+      color: rgba(255,255,255,0.42);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.18s;
+    }
+    .footer-nav a:hover { color: #89b896; }
+    .footer-rule {
+      width: 48px;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 0 auto 24px;
+    }
+    .footer-copy {
+      font-size: 0.77rem;
+      color: rgba(255,255,255,0.26);
+      line-height: 1.8;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+      .footer-nav { gap: 4px 20px; }
+    }
 
     /* ─── RESPONSIVE ──────────────────────────── */
     @media (max-width: 768px) {
@@ -837,8 +906,16 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <p><strong>CannaLaunch</strong> &nbsp;·&nbsp; Business Optimization Services &nbsp;·&nbsp; Built on real experience at 1912, Alamogordo, NM</p>
+  <footer class="site-footer">
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-rule"></div>
+    <p class="footer-copy">© 2026 CannaLaunch. Educational business systems and operational resources. Not legal, tax, accounting, or regulatory advice.</p>
   </footer>
 
 </body>
