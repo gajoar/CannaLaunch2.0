@@ -99,10 +99,10 @@
       color: #1a2e20;
     }
     /* ─── HAMBURGER & MOBILE MENU ──────────────── */
+    /* ─── CHECKBOX TOGGLE (no JS) ──────────────── */
+    #cl-nav-toggle { display: none; }
     .cl-hamburger {
       display: none;
-      background: none;
-      border: none;
       cursor: pointer;
       padding: 10px 8px;
       flex-direction: column;
@@ -115,7 +115,9 @@
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
       position: relative;
-      z-index: 101;
+      z-index: 200;
+      user-select: none;
+      -webkit-user-select: none;
     }
     .cl-hamburger span {
       display: block;
@@ -126,9 +128,9 @@
       transition: transform 0.25s, opacity 0.2s;
       transform-origin: center;
     }
-    .cl-hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .cl-hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .cl-hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    #cl-nav-toggle:checked ~ header .cl-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #cl-nav-toggle:checked ~ header .cl-hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    #cl-nav-toggle:checked ~ header .cl-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .cl-mobile-menu {
       display: none;
       position: fixed;
@@ -140,7 +142,7 @@
       flex-direction: column;
       padding: 4px 5% 20px;
     }
-    .cl-mobile-menu.is-open { display: flex; }
+    #cl-nav-toggle:checked ~ .cl-mobile-menu { display: flex; }
     .cl-mobile-menu a {
       display: block;
       color: rgba(255,255,255,0.85);
@@ -198,6 +200,8 @@
 </head>
 <body>
 
+
+  <input type="checkbox" id="cl-nav-toggle" />
   <!-- NAV -->
   <header class="cl-nav">
     <a class="cl-logo" href="index.html" aria-label="CannaLaunch home">
@@ -210,12 +214,10 @@
       <a href="cannalaunch_shop.html">Shop Systems</a>
       <a href="mailto:cannalaunch@gmail.com" class="cl-nav-cta">Book a Discovery Call</a>
     </nav>
-    <button class="cl-hamburger" id="cl-hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="cl-mobile-menu" onclick="clToggleMenu(this)">
-      <span></span><span></span><span></span>
-    </button>
+    <label class="cl-hamburger" for="cl-nav-toggle" aria-label="Toggle navigation menu"><span></span><span></span><span></span></label>
   </header>
   <div class="cl-nav-spacer"></div>
-  <div class="cl-mobile-menu" id="cl-mobile-menu" aria-hidden="true">
+  <div class="cl-mobile-menu" id="cl-mobile-menu">
     <a href="built-from-real-operations.html">Why CannaLaunch</a>
     <a href="cannalaunch_shop.html">Shop Systems</a>
     <a href="mailto:cannalaunch@gmail.com" class="cl-mobile-cta">Book a Discovery Call</a>
@@ -303,34 +305,5 @@
     <div class="footer-rule"></div>
     <p class="footer-copy">© 2026 CannaLaunch. Educational business systems and operational resources. Not legal, tax, accounting, or regulatory advice.</p>
   </footer>
-<script>
-(function () {
-  function clToggleMenu(btn) {
-    var menu = document.getElementById('cl-mobile-menu');
-    if (!menu) return;
-    var open = menu.classList.toggle('is-open');
-    btn.classList.toggle('is-open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
-  }
-  // expose to inline onclick
-  window.clToggleMenu = clToggleMenu;
-
-  document.addEventListener('DOMContentLoaded', function () {
-    // close menu when any mobile nav link is tapped
-    document.querySelectorAll('.cl-mobile-menu a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        var menu = document.getElementById('cl-mobile-menu');
-        var btn  = document.querySelector('.cl-hamburger');
-        if (!menu || !btn) return;
-        menu.classList.remove('is-open');
-        btn.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-        menu.setAttribute('aria-hidden', 'true');
-      });
-    });
-  });
-}());
-</script>
 </body>
 </html>
