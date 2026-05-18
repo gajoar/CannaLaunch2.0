@@ -3,46 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-
-  <!-- Primary SEO -->
-  <title>CannaLaunch — Retail Operations Systems & Workflow Optimization</title>
-  <meta name="description" content="CannaLaunch provides operational systems, KPI frameworks, workflow templates, accountability tools, and retail execution playbooks built from real-world operational experience." />
-  <meta name="keywords" content="retail operations systems, workflow optimization, operational accountability, SOP implementation, retail execution playbooks, KPI frameworks, operations consulting, retail workflow templates" />
-  <meta name="author" content="CannaLaunch" />
-  <link rel="canonical" href="https://www.cannalaunch.org" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.cannalaunch.org" />
-  <meta property="og:title" content="CannaLaunch — Retail Operations Systems & Workflow Optimization" />
-  <meta property="og:description" content="Operational systems, KPI frameworks, workflow templates, and retail execution playbooks built from real-world operational experience. Less chaos. More consistency." />
-  <meta property="og:image" content="https://www.cannalaunch.org/cannalaunch-logo.png" />
-  <meta property="og:site_name" content="CannaLaunch" />
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://www.cannalaunch.org" />
-  <meta name="twitter:title" content="CannaLaunch — Retail Operations Systems & Workflow Optimization" />
-  <meta name="twitter:description" content="Operational systems, KPI frameworks, workflow templates, and retail execution playbooks built from real-world operational experience. Less chaos. More consistency." />
-  <meta name="twitter:image" content="https://www.cannalaunch.org/cannalaunch-logo.png" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "CannaLaunch",
-    "url": "https://www.cannalaunch.org",
-    "logo": "https://www.cannalaunch.org/favicon.png",
-    "description": "CannaLaunch provides operational systems, KPI frameworks, workflow templates, accountability tools, and retail execution playbooks built from real-world operational experience.",
-    "email": "cannalaunch@gmail.com",
-    "areaServed": "US",
-    "serviceType": "Retail Operations Systems & Workflow Optimization"
-  }
-  </script>
-
+  <title>CannaLaunch | Business Optimization Services for Retail Operators</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -78,91 +39,85 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    
+
     /* ─── NAV ─────────────────────────────────── */
-    nav {
+    .cl-nav {
+      background: #000000;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: #000000;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 0 5%;
+      height: 160px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 160px;
+      padding: 0 5%;
     }
-
-    .nav-brand {
-      display: flex;
+    .cl-nav-spacer { height: 160px; }
+    .cl-logo {
+      display: inline-flex;
       align-items: center;
       text-decoration: none;
       flex-shrink: 0;
     }
-
-    .nav-brand .logo {
-      height: 100px;
-      max-width: 440px;
-      width: auto;
+    .cl-logo img {
       display: block;
+      height: 100px;
+      width: auto;
+      max-width: 300px;
       background: transparent;
     }
-
-    /* Fallback text logo shown when image fails to load */
-    .nav-brand .logo-fallback {
-      font-size: 1.2rem;
+    .cl-logo .cl-wordmark {
       font-weight: 700;
-      color: var(--white);
-      letter-spacing: -0.02em;
+      font-size: 1.2rem;
+      color: #ffffff;
+      display: none;
     }
-
-    .nav-brand .logo-fallback span { color: #89b896; }
-
-    .nav-actions {
+    .cl-nav-links {
       display: flex;
       align-items: center;
       gap: 12px;
       flex-shrink: 0;
     }
-
-    .nav-shop {
+    .cl-nav-links a {
       background: transparent;
       color: #89b896;
       border: 1px solid rgba(137,184,150,0.45);
       padding: 9px 20px;
-      border-radius: var(--radius);
+      border-radius: 8px;
       font-size: 0.875rem;
       font-weight: 600;
       text-decoration: none;
       transition: background 0.2s, border-color 0.2s, color 0.2s;
       white-space: nowrap;
     }
-
-    .nav-shop:hover {
+    .cl-nav-links a:hover {
       background: rgba(137,184,150,0.12);
       border-color: #89b896;
       color: #ffffff;
     }
-
-    .nav-cta {
+    .cl-nav-links a.cl-nav-cta {
       background: #ffffff;
-      color: var(--green-dark);
-      padding: 9px 20px;
-      border-radius: var(--radius);
-      font-size: 0.875rem;
+      color: #1a2e20;
+      border: none;
       font-weight: 700;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
     }
-
-    .nav-cta:hover {
+    .cl-nav-links a.cl-nav-cta:hover {
       background: #89b896;
-      color: var(--green-dark);
+      color: #1a2e20;
     }
+    @media (max-width: 600px) {
+      .cl-nav { height: 60px; padding: 0 4%; }
+      .cl-nav-spacer { height: 60px; }
+      .cl-logo img { height: 40px; max-width: 160px; }
+      .cl-nav-links a:not(.cl-nav-cta) { display: none; }
+    }
+    
 
     /* ─── HERO ────────────────────────────────── */
     .hero {
-      padding: 220px 5% 100px;
+      padding: 80px 5% 100px;
       background: var(--green-dark);
       color: var(--white);
       position: relative;
@@ -627,14 +582,13 @@
     }
 
     /* ─── FOOTER ──────────────────────────────── */
-    /* ─── SITE FOOTER ───────────────────────── */
     .site-footer {
       background: #0a0a0a;
       border-top: 1px solid rgba(255,255,255,0.07);
       padding: 52px 5% 38px;
       text-align: center;
     }
-    .footer-nav {
+        .footer-nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -665,9 +619,7 @@
       max-width: 580px;
       margin: 0 auto;
     }
-    @media (max-width: 600px) {
-      .footer-nav { gap: 4px 20px; }
-    }
+    @media (max-width: 600px) { .footer-nav { gap: 4px 20px; } }
 
     /* ─── RESPONSIVE ──────────────────────────── */
     @media (max-width: 768px) {
@@ -675,13 +627,9 @@
       .solution-cards { grid-template-columns: 1fr; }
       .steps          { grid-template-columns: 1fr; }
       .outcomes-grid  { grid-template-columns: 1fr 1fr; }
-      nav { padding: 0 4%; height: 60px; }
-      .nav-brand .logo { max-height: 48px; max-width: 160px; }
-      .nav-shop { display: none; }
-      .nav-actions { gap: 8px; }
       .cta-buttons { flex-direction: column; align-items: center; }
       section { padding: 70px 4%; }
-      .hero { padding: 120px 4% 80px; }
+      .hero { padding: 60px 4% 80px; }
     }
 
     @media (max-width: 480px) {
@@ -692,22 +640,21 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <a href="index.html" class="nav-brand">
-      <img
-        src="cannalaunch-logo.png?v=4"
-        alt="CannaLaunch"
-        class="logo"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
-      />
-      <span class="logo-fallback" style="display:none;">Canna<span>Launch</span></span>
+  <header class="cl-nav">
+    <a class="cl-logo" href="index.html" aria-label="CannaLaunch home">
+      <img src="cannalaunch-logo.png" alt="CannaLaunch"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
+      <span class="cl-wordmark">CannaLaunch</span>
     </a>
-    <div class="nav-actions">
-      <a href="built-from-real-operations.html" class="nav-shop">Why CannaLaunch</a>
-      <a href="cannalaunch_shop.html" class="nav-shop">Shop Systems</a>
-      <a href="mailto:cannalaunch@gmail.com" class="nav-cta">Book a Discovery Call</a>
-    </div>
-  </nav>
+    <nav class="cl-nav-links" aria-label="Primary">
+      <a href="built-from-real-operations.html">Why CannaLaunch</a>
+      <a href="cannalaunch_shop.html">Shop Systems</a>
+      <a href="mailto:cannalaunch@gmail.com" class="cl-nav-cta">Book a Discovery Call</a>
+    </nav>
+  </header>
+  <div class="cl-nav-spacer"></div>
+
+
 
   <!-- HERO -->
   <section class="hero">
