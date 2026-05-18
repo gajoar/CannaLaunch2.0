@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <title>Contact — CannaLaunch</title>
+  <meta name="description" content="Get in touch with CannaLaunch. Questions about operational systems, consulting services, or product inquiries — we'd love to hear from you." />
+  <link rel="canonical" href="https://www.cannalaunch.org/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #000000; --dark: #0a0a0a;
+      --green-dark: #1a2e20; --green-mid: #2d4a35; --green-accent: #3d6647;
+      --sage: #89b896; --sand: #f5f1eb; --white: #ffffff;
+      --gray-100: #f7f7f6; --gray-200: #ebebea; --gray-400: #9a9892; --gray-600: #5c5a55;
+      --text: #1e1d1a; --radius: 8px; --radius-lg: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    .cl-nav { background: var(--black); border-bottom: 1px solid rgba(255,255,255,0.08); position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 160px; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; }
+    .cl-nav-spacer { height: 160px; }
+    .cl-logo { display: inline-flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .cl-logo img { display: block; height: 100px; width: auto; max-width: 440px; background: transparent; }
+    .cl-logo .cl-wordmark { font-weight: 700; font-size: 1.2rem; color: var(--white); display: none; }
+    .cl-nav-links { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .cl-nav-links a { background: transparent; color: var(--sage); border: 1px solid rgba(137,184,150,0.45); padding: 9px 20px; border-radius: var(--radius); font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s, border-color 0.2s, color 0.2s; white-space: nowrap; }
+    .cl-nav-links a:hover { background: rgba(137,184,150,0.12); border-color: var(--sage); color: var(--white); }
+    .cl-nav-links a.cta { background: var(--white); color: var(--green-dark); border: none; font-weight: 700; }
+    .cl-nav-links a.cta:hover { background: var(--sage); }
+    @media (max-width: 768px) { .cl-nav { height: 60px; padding: 0 4%; } .cl-nav-spacer { height: 60px; } .cl-logo img { height: 40px; max-width: 160px; } .cl-nav-links a:not(.cta) { display: none; } }
+
+    /* PAGE HEADER */
+    .page-header { background: var(--green-dark); padding: 72px 5% 64px; color: var(--white); }
+    .page-header-inner { max-width: 760px; }
+    .page-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 16px; }
+    .page-header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 16px; }
+    .page-header p { font-size: 1.05rem; color: rgba(255,255,255,0.65); max-width: 520px; line-height: 1.7; }
+
+    /* CONTACT LAYOUT */
+    .contact-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 72px 5% 80px;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* LEFT: contact info */
+    .contact-info { }
+    .contact-info h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .contact-info p {
+      font-size: 0.97rem;
+      color: var(--gray-600);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-item {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
+    }
+    .contact-item-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .contact-item a {
+      font-size: 0.97rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.18s;
+    }
+    .contact-item a:hover { color: var(--green-accent); }
+    .contact-item p {
+      font-size: 0.92rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* RIGHT: form */
+    .contact-form-card {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 36px 38px;
+    }
+    .contact-form-card h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 11px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green-accent);
+      box-shadow: 0 0 0 3px rgba(61,102,71,0.12);
+    }
+    .form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+    .form-submit {
+      display: block;
+      width: 100%;
+      background: var(--green-dark);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius);
+      padding: 14px 24px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 6px;
+    }
+    .form-submit:hover {
+      background: var(--green-accent);
+      transform: translateY(-1px);
+    }
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrap { grid-template-columns: 1fr; gap: 36px; padding: 52px 4% 64px; }
+      .contact-form-card { padding: 28px 22px; }
+    }
+
+    /* FOOTER */
+    .site-footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.07); padding: 52px 5% 38px; text-align: center; }
+    .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 32px; margin-bottom: 28px; padding: 0; list-style: none; }
+    .footer-nav a { color: rgba(255,255,255,0.42); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em; transition: color 0.18s; }
+    .footer-nav a:hover, .footer-nav a[aria-current="page"] { color: var(--sage); }
+    .footer-rule { width: 48px; height: 1px; background: rgba(255,255,255,0.1); margin: 0 auto 24px; }
+    .footer-copy { font-size: 0.77rem; color: rgba(255,255,255,0.26); line-height: 1.8; max-width: 580px; margin: 0 auto; }
+    @media (max-width: 600px) { .footer-nav { gap: 4px 20px; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="cl-nav">
+    <a class="cl-logo" href="index.html" aria-label="CannaLaunch home">
+      <img src="cannalaunch-logo.png" alt="CannaLaunch" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
+      <span class="cl-wordmark">CannaLaunch</span>
+    </a>
+    <nav class="cl-nav-links" aria-label="Primary">
+      <a href="built-from-real-operations.html">Why CannaLaunch</a>
+      <a href="cannalaunch_shop.html">Shop Systems</a>
+      <a href="mailto:cannalaunch@gmail.com" class="cta">Book a Discovery Call</a>
+    </nav>
+  </header>
+  <div class="cl-nav-spacer"></div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="page-header-inner">
+      <span class="page-tag">Get In Touch</span>
+      <h1>Contact CannaLaunch</h1>
+      <p>Questions about our systems, consulting services, or products? We're straightforward to reach and quick to respond.</p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="contact-wrap">
+
+    <!-- LEFT: Info -->
+    <aside class="contact-info">
+      <h2>Let's talk operations.</h2>
+      <p>Whether you're exploring a consulting engagement, have a question about a product, or just want to understand if CannaLaunch is the right fit — reach out. No hard sell, no automated response queue.</p>
+
+      <div class="contact-detail">
+        <div class="contact-item">
+          <span class="contact-item-label">Email</span>
+          <a href="mailto:cannalaunch@gmail.com">cannalaunch@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Response Time</span>
+          <p>We typically respond within 1–2 business days.</p>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Discovery Call</span>
+          <p>Prefer to talk directly? <a href="mailto:cannalaunch@gmail.com?subject=Discovery Call Request">Request a discovery call</a> and we'll find a time that works.</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT: Form -->
+    <div class="contact-form-card">
+      <h2>Send a Message</h2>
+      <form action="mailto:cannalaunch@gmail.com" method="POST" enctype="text/plain">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="First and last name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@yourbusiness.com" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="">Select a topic...</option>
+            <option value="Consulting Inquiry">Consulting Inquiry</option>
+            <option value="Product Question">Product / Shop Question</option>
+            <option value="Discovery Call">Discovery Call Request</option>
+            <option value="Partnership">Partnership or Collaboration</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us a bit about your operation and what you're looking for..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+        <p class="form-note">This will open your email client. You can also reach us directly at cannalaunch@gmail.com</p>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <div class="footer-rule"></div>
+    <p class="footer-copy">© 2026 CannaLaunch. Educational business systems and operational resources. Not legal, tax, accounting, or regulatory advice.</p>
+  </footer>
+
+</body>
+</html>
