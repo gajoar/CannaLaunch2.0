@@ -48,33 +48,32 @@
 
     /* ---------- Top Nav (shared across pages) ---------- */
     .cl-nav {
-      background: var(--deep-green);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    .cl-nav-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 18px 28px;
+      background: #000000;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 160px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      padding: 0 5%;
+    }
+    .cl-nav-spacer {
+      height: 160px;
     }
     .cl-logo {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
       text-decoration: none;
-      color: var(--on-dark);
+      flex-shrink: 0;
     }
     .cl-logo img {
       display: block;
-      height: 38px;
+      height: 100px;
       width: auto;
-      max-width: 240px;
+      max-width: 440px;
+      background: transparent;
     }
     .cl-logo .cl-wordmark {
       font-family: 'Montserrat', sans-serif;
@@ -82,33 +81,50 @@
       font-size: 18px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--on-dark);
+      color: #ffffff;
       display: none;
     }
-    /* If logo image fails to load, JS swaps to wordmark fallback */
-
     .cl-nav-links {
       display: flex;
-      gap: 28px;
       align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
     }
     .cl-nav-links a {
-      color: var(--on-dark-2);
-      text-decoration: none;
-      font-size: 13px;
+      background: transparent;
+      color: #89b896;
+      border: 1px solid rgba(137,184,150,0.45);
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-size: 0.875rem;
       font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 8px 0;
-      transition: color 0.15s ease;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      white-space: nowrap;
+      letter-spacing: normal;
+      text-transform: none;
     }
     .cl-nav-links a:hover,
     .cl-nav-links a[aria-current="page"] {
-      color: var(--on-dark);
+      background: rgba(137,184,150,0.12);
+      border-color: #89b896;
+      color: #ffffff;
     }
-    @media (max-width: 700px) {
-      .cl-nav-links { gap: 16px; }
-      .cl-nav-links a { font-size: 11px; }
+    .cl-nav-links a.cl-nav-cta {
+      background: #ffffff;
+      color: #1a2e20;
+      border: none;
+      font-weight: 700;
+    }
+    .cl-nav-links a.cl-nav-cta:hover {
+      background: #89b896;
+      color: #1a2e20;
+    }
+    @media (max-width: 768px) {
+      .cl-nav { height: 60px; padding: 0 4%; }
+      .cl-nav-spacer { height: 60px; }
+      .cl-logo img { height: 40px; max-width: 160px; }
+      .cl-nav-links a:not(.cl-nav-cta) { display: none; }
     }
 
     /* ---------- Hero ---------- */
@@ -436,19 +452,18 @@
 
   <!-- ============ TOP NAV ============ -->
   <header class="cl-nav">
-    <div class="cl-nav-inner">
-      <a class="cl-logo" href="index.html" aria-label="CannaLaunch home">
-        <img src="cannalaunch_logo_v2.png" alt="CannaLaunch"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
-        <span class="cl-wordmark">CANNALAUNCH</span>
-      </a>
-      <nav class="cl-nav-links" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="built-from-real-operations.html" aria-current="page">Why CannaLaunch</a>
-        <a href="cannalaunch_shop.html">Shop</a>
-      </nav>
-    </div>
+    <a class="cl-logo" href="index.html" aria-label="CannaLaunch home">
+      <img src="cannalaunch-logo.png" alt="CannaLaunch"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
+      <span class="cl-wordmark">CANNALAUNCH</span>
+    </a>
+    <nav class="cl-nav-links" aria-label="Primary">
+      <a href="built-from-real-operations.html" aria-current="page">Why CannaLaunch</a>
+      <a href="cannalaunch_shop.html">Shop Systems</a>
+      <a href="mailto:cannalaunch@gmail.com" class="cl-nav-cta">Book a Discovery Call</a>
+    </nav>
   </header>
+  <div class="cl-nav-spacer"></div>
 
   <!-- ============ SECTION 1 · HERO ============ -->
   <section class="cl-hero">
