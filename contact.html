@@ -420,6 +420,8 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Tell us a bit about your operation and what you're looking for..." required></textarea>
         </div>
+        <!-- Hidden referral tracking field — filled automatically by referral.js -->
+        <input type="hidden" name="referral_source" value="" />
         <button type="submit" class="form-submit">Send Message</button>
         <p class="form-note">This will open your email client. You can also reach us directly at cannalaunch@gmail.com</p>
       </form>
@@ -440,5 +442,6 @@
     <p class="footer-copy">© 2026 CannaLaunch. Educational business systems and operational resources. Not legal, tax, accounting, or regulatory advice.</p>
   </footer>
 
+  <script src="referral.js"></script>
 </body>
 </html>
