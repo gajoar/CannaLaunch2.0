@@ -106,72 +106,30 @@
       background: #89b896;
       color: #1a2e20;
     }
-    /* ─── HAMBURGER & MOBILE MENU ──────────────── */
-    /* ─── CHECKBOX TOGGLE (no JS) ──────────────── */
-    #cl-nav-toggle { display: none; }
-    .cl-hamburger {
-      display: none;
-      cursor: pointer;
-      padding: 10px 8px;
-      flex-direction: column;
-      gap: 5px;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      min-width: 44px;
-      min-height: 44px;
-      touch-action: manipulation;
-      -webkit-tap-highlight-color: transparent;
-      position: relative;
-      z-index: 200;
-      user-select: none;
-      -webkit-user-select: none;
-    }
-    .cl-hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: #ffffff;
-      border-radius: 2px;
-      transition: transform 0.25s, opacity 0.2s;
-      transform-origin: center;
-    }
-    #cl-nav-toggle:checked ~ header .cl-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    #cl-nav-toggle:checked ~ header .cl-hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    #cl-nav-toggle:checked ~ header .cl-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .cl-mobile-menu {
-      display: none;
-      position: fixed;
-      top: 60px;
-      left: 0; right: 0;
-      background: #0a0a0a;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      z-index: 99;
-      flex-direction: column;
-      padding: 4px 5% 20px;
-    }
-    #cl-nav-toggle:checked ~ .cl-mobile-menu { display: flex; }
-    .cl-mobile-menu a {
-      display: block;
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      letter-spacing: 0.01em;
-    }
-    .cl-mobile-menu a:last-child { border-bottom: none; }
-    .cl-mobile-menu a.cl-mobile-cta {
-      color: #89b896;
-      font-weight: 700;
-    }
+    /* ─── MOBILE NAV (two-row, always visible) ─── */
     @media (max-width: 600px) {
-      .cl-nav { height: 60px; padding: 0 4%; }
-      .cl-nav-spacer { height: 60px; }
-      .cl-logo img { height: 40px; max-width: 160px; }
-      .cl-nav-links { display: none; }
-      .cl-hamburger { display: flex; }
+      .cl-nav {
+        height: auto;
+        padding: 10px 4% 10px;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+      .cl-nav-spacer { height: 126px; }
+      .cl-logo img { height: 36px; max-width: 160px; }
+      .cl-nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 6px;
+      }
+      .cl-nav-links a {
+        flex: 1;
+        text-align: center;
+        padding: 10px 4px;
+        font-size: 0.8rem;
+        min-width: 0;
+      }
     }
     
 
@@ -287,7 +245,6 @@
 <body>
 
 
-  <input type="checkbox" id="cl-nav-toggle" />
   <!-- NAV -->
   <header class="cl-nav">
     <a class="cl-logo" href="index.html" aria-label="CannaLaunch home">
@@ -300,14 +257,9 @@
       <a href="cannalaunch_shop.html">Shop Systems</a>
       <a href="mailto:cannalaunch@gmail.com" class="cl-nav-cta">Book a Discovery Call</a>
     </nav>
-    <label class="cl-hamburger" for="cl-nav-toggle" aria-label="Toggle navigation menu"><span></span><span></span><span></span></label>
   </header>
   <div class="cl-nav-spacer"></div>
-  <div class="cl-mobile-menu" id="cl-mobile-menu">
-    <a href="built-from-real-operations.html">Why CannaLaunch</a>
-    <a href="cannalaunch_shop.html">Shop Systems</a>
-    <a href="mailto:cannalaunch@gmail.com" class="cl-mobile-cta">Book a Discovery Call</a>
-  </div>
+
 
 
 
