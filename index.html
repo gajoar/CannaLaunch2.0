@@ -153,12 +153,12 @@
     @media (max-width: 600px) {
       .cl-nav {
         height: auto;
-        padding: 10px 4% 10px;
+        padding: 10px 4% 12px;
         flex-wrap: wrap;
         gap: 8px;
         align-items: center;
       }
-      .cl-nav-spacer { height: 126px; }
+      .cl-nav-spacer { height: 152px; }
       .cl-logo img { height: 36px; max-width: 160px; }
       .cl-nav-links {
         display: flex;
@@ -166,12 +166,23 @@
         width: 100%;
         gap: 6px;
       }
+      /* First two links share row 1 equally */
       .cl-nav-links a {
-        flex: 1;
+        flex: 1 1 auto;
         text-align: center;
-        padding: 10px 4px;
+        padding: 9px 8px;
         font-size: 0.8rem;
+        white-space: nowrap;
         min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      /* "Book a Discovery Call" gets its own full-width row */
+      .cl-nav-links a:last-child {
+        flex-basis: 100%;
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
       }
     }
     
