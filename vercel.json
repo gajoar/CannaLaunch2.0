@@ -1,8 +1,6 @@
 {
   "rewrites": [
     {
-      "comment": "Clean referral URLs: cannalaunch.org/mike → cannalaunch.org/?ref=mike",
-      "comment2": "This only matches single-segment paths with no file extension.",
       "source": "/:code([a-zA-Z0-9_-]+)",
       "destination": "/?ref=:code"
     }
