@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <title>Operational Consulting & Implementation | CannaLaunch</title>
+  <meta name="description" content="CannaLaunch operational consulting and implementation programs. DIY operational reset frameworks, implementation consulting tiers, and monthly advisory support built from real-world operational experience." />
+  <meta name="keywords" content="cannabis operations consulting, dispensary implementation consulting, cannabis SOP consulting, operational restructuring, dispensary KPI consulting, cannabis retail operations advisory" />
+  <meta name="author" content="CannaLaunch" />
+  <link rel="canonical" href="https://www.cannalaunch.org/operational_consulting.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.cannalaunch.org/operational_consulting.html" />
+  <meta property="og:title" content="Operational Consulting & Implementation | CannaLaunch" />
+  <meta property="og:description" content="Operational restructuring, accountability systems, KPI infrastructure, and implementation support built from real-world operational experience." />
+  <meta property="og:image" content="https://www.cannalaunch.org/cannalaunch-logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:   #1a2e20;
+      --green-mid:    #2d4a35;
+      --green-accent: #3d6647;
+      --green-light:  #e8f0e9;
+      --sage:         #89b896;
+      --sand:         #f5f1eb;
+      --white:        #ffffff;
+      --gray-100:     #f7f7f6;
+      --gray-200:     #ebebea;
+      --gray-400:     #9a9892;
+      --gray-600:     #5c5a55;
+      --gray-800:     #2a2925;
+      --text:         #1e1d1a;
+      --radius:       8px;
+      --radius-lg:    14px;
+      --shadow:       0 2px 12px rgba(0,0,0,0.08);
+      --shadow-lg:    0 8px 40px rgba(0,0,0,0.14);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─────────────────────────────────── */
+    .cl-nav {
+      background: #000000;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+    }
+    .cl-nav-spacer { height: 160px; }
+    .cl-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .cl-logo img {
+      display: block;
+      height: 100px;
+      width: auto;
+      max-width: 300px;
+      background: transparent;
+    }
+    .cl-logo .cl-wordmark {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #ffffff;
+      display: none;
+    }
+    .cl-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .cl-nav-links a {
+      background: transparent;
+      color: #89b896;
+      border: 1px solid rgba(137,184,150,0.45);
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .cl-nav-links a:hover {
+      background: rgba(137,184,150,0.12);
+      border-color: #89b896;
+      color: #ffffff;
+    }
+    .cl-nav-links a.cl-nav-active {
+      background: rgba(137,184,150,0.15);
+      border-color: #89b896;
+      color: #ffffff;
+    }
+    .cl-nav-links a.cl-nav-cta {
+      background: #ffffff;
+      color: #1a2e20;
+      border: none;
+      font-weight: 700;
+    }
+    .cl-nav-links a.cl-nav-cta:hover {
+      background: #89b896;
+      color: #1a2e20;
+    }
+
+    /* ─── MOBILE NAV ────────────────────────────── */
+    @media (max-width: 600px) {
+      .cl-nav {
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        padding: 12px 4% 12px;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+      .cl-nav-spacer { height: 190px; }
+      .cl-logo { width: 100%; justify-content: center; }
+      .cl-logo img { height: 34px; max-width: 160px; }
+      .cl-nav-links {
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 6px;
+      }
+      /* Why CannaLaunch + Shop Systems: 50/50 */
+      .cl-nav-links a {
+        box-sizing: border-box;
+        flex: 0 0 calc(50% - 3px);
+        width: calc(50% - 3px);
+        max-width: calc(50% - 3px);
+        text-align: center;
+        padding: 10px 6px;
+        font-size: 0.75rem;
+        white-space: normal;
+        line-height: 1.3;
+        overflow: hidden;
+      }
+      /* Consulting + Book a Discovery Call: full width */
+      .cl-nav-links a:nth-child(n+3) {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        white-space: normal;
+        overflow: visible;
+      }
+    }
+
+    /* ─── SHARED TYPOGRAPHY ─────────────────────── */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .section-title {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      color: var(--green-dark);
+      margin-bottom: 18px;
+    }
+    .section-lead {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      max-width: 620px;
+      line-height: 1.75;
+    }
+
+    /* ─── HERO ──────────────────────────────────── */
+    .hero {
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 90px 5% 110px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -140px; right: -100px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(61,102,71,0.38) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -120px; left: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(61,102,71,0.22) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    /* Subtle diagonal rule — executive feel */
+    .hero-rule {
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(137,184,150,0.15), transparent);
+      right: 38%;
+    }
+    .hero-inner {
+      max-width: 780px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--sage);
+      opacity: 0.6;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 28px;
+      color: var(--white);
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--sage);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.68);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 44px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #ffffff;
+      color: var(--green-dark);
+      padding: 15px 32px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.22);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+    }
+    .btn-outline-hero {
+      display: inline-block;
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      border: 1.5px solid rgba(255,255,255,0.35);
+      padding: 14px 30px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .btn-outline-hero:hover {
+      border-color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.07);
+      transform: translateY(-2px);
+    }
+
+    /* ─── PROGRAM SECTIONS (shared) ─────────────── */
+    .programs-section {
+      padding: 96px 5%;
+    }
+    .programs-section.bg-sand { background: var(--sand); }
+    .programs-section.bg-white { background: var(--white); }
+    .programs-section.bg-dark {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+    .programs-section.bg-dark .section-title { color: var(--white); }
+    .programs-section.bg-dark .section-lead { color: rgba(255,255,255,0.65); }
+    .programs-section.bg-dark .section-label { color: var(--sage); }
+
+    .programs-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .programs-header {
+      margin-bottom: 56px;
+    }
+
+    /* ─── DIY PROGRAM CARDS ─────────────────────── */
+    .diy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .diy-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .diy-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+    .diy-card.featured {
+      border-color: var(--green-accent);
+      border-width: 1.5px;
+    }
+    .tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 16px;
+    }
+    .tier-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-accent);
+      flex-shrink: 0;
+    }
+    .diy-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .card-price {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+    .card-price-note {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      margin-bottom: 20px;
+    }
+    .card-best-for {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      padding: 14px 16px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      margin-bottom: 22px;
+      border-left: 3px solid var(--green-accent);
+    }
+    .card-best-for strong {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      display: block;
+      margin-bottom: 5px;
+    }
+    .card-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 28px;
+      flex: 1;
+    }
+    .card-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+    .card-includes li::before {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+      border-radius: 50%;
+      background: var(--green-light);
+      border: 1.5px solid var(--green-accent);
+      margin-top: 2px;
+    }
+    .card-format {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-bottom: 22px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .btn-card {
+      display: block;
+      text-align: center;
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 13px 20px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: auto;
+    }
+    .btn-card:hover {
+      background: var(--green-accent);
+      transform: translateY(-1px);
+    }
+
+    /* ─── CONSULTING CARDS ──────────────────────── */
+    .consulting-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+    .advisory-card {
+      grid-column: 1 / -1;
+    }
+    .consulting-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .consulting-card:hover {
+      border-color: rgba(137,184,150,0.4);
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-3px);
+    }
+    .consulting-card .tier-badge { color: var(--sage); }
+    .consulting-card .tier-badge-dot { background: var(--sage); }
+    .consulting-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .consulting-card .card-price {
+      color: var(--sage);
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+    .consulting-card .card-price-note {
+      color: rgba(255,255,255,0.38);
+    }
+    .consulting-card .card-best-for {
+      background: rgba(255,255,255,0.06);
+      border-left-color: var(--sage);
+      color: rgba(255,255,255,0.7);
+    }
+    .consulting-card .card-best-for strong { color: var(--sage); }
+    .consulting-card .card-includes li {
+      color: rgba(255,255,255,0.7);
+    }
+    .consulting-card .card-includes li::before {
+      background: rgba(137,184,150,0.15);
+      border-color: var(--sage);
+    }
+    .consulting-card .card-format {
+      color: rgba(255,255,255,0.3);
+      border-top-color: rgba(255,255,255,0.1);
+    }
+    .btn-card-outline {
+      display: block;
+      text-align: center;
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.4);
+      padding: 13px 20px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+      margin-top: auto;
+    }
+    .btn-card-outline:hover {
+      border-color: var(--sage);
+      background: rgba(137,184,150,0.1);
+      transform: translateY(-1px);
+    }
+
+    /* Advisory card (full-width) */
+    .advisory-card {
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 40px;
+      border-color: rgba(137,184,150,0.25);
+      background: rgba(137,184,150,0.05);
+    }
+    .advisory-card:hover {
+      border-color: rgba(137,184,150,0.5);
+      background: rgba(137,184,150,0.09);
+    }
+    .advisory-left { flex: 1; }
+    .advisory-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ─── CREDIT POLICY ─────────────────────────── */
+    .credit-section {
+      padding: 96px 5%;
+      background: var(--sand);
+    }
+    .credit-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .credit-body {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .credit-table {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .credit-row {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 24px;
+      border-top: 3px solid var(--green-accent);
+    }
+    .credit-row-tier {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .credit-row h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .credit-row p {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+    }
+    .credit-row .credit-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--green-accent);
+      margin-top: 12px;
+    }
+    .credit-note {
+      margin-top: 36px;
+      padding: 24px 28px;
+      background: var(--green-dark);
+      border-radius: var(--radius-lg);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+    .credit-note strong { color: var(--sage); }
+
+    /* ─── WHY IMPLEMENTATION MATTERS ────────────── */
+    .implementation-section {
+      padding: 96px 5%;
+      background: var(--white);
+    }
+    .implementation-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .impl-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 56px;
+      align-items: start;
+    }
+    .impl-left { }
+    .impl-statement {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .impl-statement + .impl-statement {
+      padding-top: 0;
+      border-bottom: none;
+    }
+    .impl-body {
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .impl-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .impl-pillar {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 24px 22px;
+      border-left: 4px solid var(--green-accent);
+    }
+    .impl-pillar h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .impl-pillar p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+    }
+
+    /* ─── FINAL CTA ─────────────────────────────── */
+    .final-cta {
+      background: var(--green-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 110px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 600px;
+      background: radial-gradient(circle, rgba(61,102,71,0.3) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .final-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .final-cta .section-title {
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+    .final-cta p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 44px;
+      line-height: 1.75;
+    }
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-primary-light {
+      display: inline-block;
+      background: #ffffff;
+      color: var(--green-dark);
+      padding: 15px 36px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .btn-primary-light:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    }
+    .btn-shop-light {
+      display: inline-block;
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid rgba(255,255,255,0.42);
+      padding: 13px 34px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .btn-shop-light:hover {
+      border-color: #ffffff;
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-2px);
+    }
+    .cta-note {
+      margin-top: 20px;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────── */
+    .site-footer {
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 52px 5% 38px;
+      text-align: center;
+    }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 32px;
+      margin-bottom: 28px;
+      padding: 0;
+      list-style: none;
+    }
+    .footer-nav a {
+      color: rgba(255,255,255,0.42);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.18s;
+    }
+    .footer-nav a:hover { color: var(--sage); }
+    .footer-rule {
+      width: 48px;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 0 auto 24px;
+    }
+    .footer-copy {
+      font-size: 0.77rem;
+      color: rgba(255,255,255,0.26);
+      line-height: 1.8;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) { .footer-nav { gap: 4px 20px; } }
+
+    /* ─── COMPLETE DIY BUNDLE ───────────────────── */
+    .bundle-section {
+      padding: 0 5% 96px;
+      background: var(--sand);
+    }
+    .bundle-card {
+      max-width: 1060px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 2px solid var(--green-accent);
+      border-radius: var(--radius-lg);
+      padding: 52px 52px 46px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 0 4px rgba(61,102,71,0.07), var(--shadow-lg);
+    }
+    .bundle-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(61,102,71,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .bundle-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+    .bundle-left {}
+    .bundle-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-dark);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 22px;
+    }
+    .bundle-badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+    }
+    .bundle-card h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--green-dark);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .bundle-price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+    .bundle-price-note {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      margin-bottom: 22px;
+    }
+    .bundle-best-for {
+      padding: 16px 18px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--green-accent);
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .bundle-best-for strong {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 5px;
+    }
+    .bundle-highlight {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--green-accent);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 26px;
+    }
+    .bundle-highlight::before {
+      content: '★';
+      flex-shrink: 0;
+      font-size: 0.78rem;
+      margin-top: 1px;
+    }
+    .bundle-cta {
+      display: inline-block;
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 15px 36px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .bundle-cta:hover {
+      background: var(--green-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .bundle-right {}
+    .bundle-includes-header {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 14px;
+    }
+    .bundle-tier-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .bundle-tier-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      line-height: 1.45;
+    }
+    .bundle-tier-list li::before {
+      content: '✓';
+      flex-shrink: 0;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--white);
+      background: var(--green-accent);
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .bundle-plus-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .bundle-plus-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+    .bundle-plus-list li::before {
+      content: '';
+      display: block;
+      width: 14px; height: 14px;
+      min-width: 14px;
+      border-radius: 50%;
+      background: var(--green-light);
+      border: 1.5px solid var(--green-accent);
+      margin-top: 2px;
+    }
+    @media (max-width: 900px) {
+      .bundle-inner { grid-template-columns: 1fr; gap: 32px; }
+      .bundle-card { padding: 36px 28px 32px; }
+    }
+    @media (max-width: 768px) {
+      .bundle-section { padding: 0 4% 72px; }
+    }
+
+    /* ─── COMPLETE TRANSFORMATION ───────────────── */
+    .transformation-section {
+      padding: 0 5% 96px;
+      background: var(--green-dark);
+    }
+    .transformation-card {
+      max-width: 1060px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.04);
+      border: 1.5px solid rgba(137,184,150,0.35);
+      border-radius: var(--radius-lg);
+      padding: 52px 52px 46px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 0 4px rgba(137,184,150,0.05), 0 8px 60px rgba(0,0,0,0.3);
+    }
+    .transformation-card::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(137,184,150,0.1) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .transformation-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+    .transformation-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(137,184,150,0.15);
+      border: 1px solid rgba(137,184,150,0.3);
+      color: var(--sage);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 22px;
+    }
+    .transformation-card h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .transformation-price {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--sage);
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+    .transformation-price-note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 22px;
+    }
+    .transformation-best-for {
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--sage);
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .transformation-best-for strong {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 5px;
+    }
+    .transformation-statement {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--sage);
+      font-style: italic;
+      margin-bottom: 28px;
+      line-height: 1.55;
+      padding: 14px 18px;
+      border: 1px solid rgba(137,184,150,0.2);
+      border-radius: var(--radius);
+      background: rgba(137,184,150,0.06);
+    }
+    .transformation-cta {
+      display: inline-block;
+      background: var(--white);
+      color: var(--green-dark);
+      padding: 15px 32px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .transformation-cta:hover {
+      background: var(--sage);
+      color: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+    .transformation-includes-header {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 14px;
+    }
+    .transformation-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .transformation-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.5;
+    }
+    .transformation-list li::before {
+      content: '';
+      display: block;
+      width: 14px; height: 14px;
+      min-width: 14px;
+      border-radius: 50%;
+      background: rgba(137,184,150,0.15);
+      border: 1.5px solid var(--sage);
+      margin-top: 2px;
+    }
+    @media (max-width: 900px) {
+      .transformation-inner { grid-template-columns: 1fr; gap: 32px; }
+      .transformation-card { padding: 36px 28px 32px; }
+    }
+    @media (max-width: 768px) {
+      .transformation-section { padding: 0 4% 72px; }
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 900px) {
+      .diy-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+      .consulting-grid { grid-template-columns: 1fr; }
+      .advisory-card { flex-direction: column; gap: 24px; }
+      .advisory-right { align-items: flex-start; }
+      .credit-table { grid-template-columns: 1fr; max-width: 480px; }
+      .impl-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .programs-section { padding: 72px 4%; }
+      .hero { padding: 70px 4% 90px; }
+      .credit-section { padding: 72px 4%; }
+      .implementation-section { padding: 72px 4%; }
+      .final-cta { padding: 80px 4%; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .advisory-card { padding: 28px 24px; }
+    }
+    @media (max-width: 480px) {
+      .credit-table { max-width: 100%; }
+      .diy-grid { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────── -->
+  <header class="cl-nav">
+    <a class="cl-logo" href="index.html" aria-label="CannaLaunch home">
+      <img src="cannalaunch-logo.png" alt="CannaLaunch"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
+      <span class="cl-wordmark">CannaLaunch</span>
+    </a>
+    <nav class="cl-nav-links" aria-label="Primary">
+      <a href="built-from-real-operations.html">Why CannaLaunch</a>
+      <a href="cannalaunch_shop.html">Shop Systems</a>
+      <a href="operational_consulting.html" class="cl-nav-active">Consulting</a>
+      <a href="mailto:cannalaunch@gmail.com" class="cl-nav-cta">Book a Discovery Call</a>
+    </nav>
+  </header>
+  <div class="cl-nav-spacer"></div>
+
+  <!-- ── HERO ─────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-rule"></div>
+    <div class="hero-inner">
+      <span class="hero-eyebrow">Implementation & Advisory Services</span>
+      <h1>Operational Consulting &amp; <em>Implementation Systems</em></h1>
+      <p class="hero-sub">Operational restructuring, accountability systems, KPI infrastructure, workflow optimization, and implementation support built from real-world operational experience.</p>
+      <div class="hero-actions">
+        <a href="#diy-programs" class="btn-outline-hero">Explore DIY Frameworks</a>
+        <a href="mailto:cannalaunch@gmail.com" class="btn-primary">Book a Discovery Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 2: DIY PROGRAMS ───────────────────── -->
+  <section class="programs-section bg-sand" id="diy-programs">
+    <div class="programs-inner">
+      <div class="programs-header">
+        <span class="section-label">Self-Implementation</span>
+        <h2 class="section-title">DIY Operational Reset Programs</h2>
+        <p class="section-lead">Self-implementation operational systems for operators who want to improve execution internally before pursuing full consulting support.</p>
+      </div>
+
+      <div class="diy-grid">
+
+        <!-- TIER 1 -->
+        <div class="diy-card">
+          <span class="tier-badge"><span class="tier-badge-dot"></span>DIY Tier 1 &middot; DIAGNOSE</span>
+          <h3>Operations Audit Framework</h3>
+          <div style="font-size:0.75rem;font-weight:600;color:var(--green-accent);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:14px;line-height:1.3;">Operational Assessment &amp; Visibility Installation</div>
+          <div class="card-price">$149</div>
+          <div class="card-price-note">One-time. Immediate digital access.</div>
+          <div class="card-best-for">
+            <strong>Best For</strong>
+            Operators who want to diagnose operational gaps internally before committing to implementation consulting.
+          </div>
+          <ul class="card-includes">
+            <li>Operational audit systems</li>
+            <li>KPI visibility frameworks</li>
+            <li>Accountability scoring</li>
+            <li>Gap identification systems</li>
+            <li>Prioritized implementation frameworks</li>
+          </ul>
+          <div class="card-format">PDF + Editable DOCX formats included</div>
+          <a href="https://payhip.com/b/Y76TD" target="_blank" rel="noopener noreferrer" class="btn-card">View Tier 1 Framework</a>
+        </div>
+
+        <!-- TIER 2 -->
+        <div class="diy-card featured">
+          <span class="tier-badge"><span class="tier-badge-dot"></span>DIY Tier 2 &middot; STABILIZE</span>
+          <h3>Operations Stabilization Framework</h3>
+          <div style="font-size:0.75rem;font-weight:600;color:var(--green-accent);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:14px;line-height:1.3;">Operational Stabilization &amp; Systems Installation</div>
+          <div class="card-price">$497</div>
+          <div class="card-price-note">One-time. Immediate digital access.</div>
+          <div class="card-best-for">
+            <strong>Best For</strong>
+            Operators actively working to improve consistency, accountability, workflow execution, and operational stability.
+          </div>
+          <ul class="card-includes">
+            <li>SOP stabilization systems</li>
+            <li>Accountability frameworks</li>
+            <li>Workflow implementation systems</li>
+            <li>Management cadence systems</li>
+            <li>Operational issue tracking</li>
+          </ul>
+          <div class="card-format">PDF + Editable DOCX formats included</div>
+          <a href="https://payhip.com/b/9eEMW" target="_blank" rel="noopener noreferrer" class="btn-card">View Tier 2 Framework</a>
+        </div>
+
+        <!-- TIER 3 -->
+        <div class="diy-card">
+          <span class="tier-badge"><span class="tier-badge-dot"></span>DIY Tier 3 &middot; SCALE</span>
+          <h3>Enterprise Scaling Framework</h3>
+          <div style="font-size:0.75rem;font-weight:600;color:var(--green-accent);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:14px;line-height:1.3;">Enterprise Operating System &amp; Governance Installation</div>
+          <div class="card-price">$1,497</div>
+          <div class="card-price-note">One-time. Immediate digital access.</div>
+          <div class="card-best-for">
+            <strong>Best For</strong>
+            Operators building scalable enterprise infrastructure, executive operating systems, governance frameworks, and multi-location readiness.
+          </div>
+          <ul class="card-includes">
+            <li>Executive operating frameworks</li>
+            <li>Governance systems</li>
+            <li>Operational maturity systems</li>
+            <li>KPI instrumentation frameworks</li>
+            <li>Expansion-readiness systems</li>
+          </ul>
+          <div class="card-format">PDF + Editable DOCX formats included</div>
+          <a href="https://payhip.com/b/E3x2Y" target="_blank" rel="noopener noreferrer" class="btn-card">View Tier 3 Framework</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPLETE DIY BUNDLE ──────────────────────── -->
+  <section class="bundle-section" id="diy-bundle">
+    <div class="bundle-card">
+      <div class="bundle-inner">
+
+        <div class="bundle-left">
+          <span class="bundle-badge"><span class="bundle-badge-dot"></span>Complete Bundle</span>
+          <h2>Complete Operational Reset Framework</h2>
+          <div class="bundle-price">$1,997</div>
+          <div class="bundle-price-note">One-time. All three tiers included. Immediate digital access.</div>
+          <div class="bundle-best-for">
+            <strong>Best For</strong>
+            Operators planning a full operational rebuild who want every implementation framework in one complete system.
+          </div>
+          <div class="bundle-highlight">Best value for operators planning a complete operational reset.</div>
+          <a href="https://payhip.com/b/nNa7D" target="_blank" rel="noopener noreferrer" class="bundle-cta">View Complete Framework</a>
+        </div>
+
+        <div class="bundle-right">
+          <p class="bundle-includes-header">What's Included</p>
+          <ul class="bundle-tier-list">
+            <li>DIY Tier 1 — Operations Audit Framework</li>
+            <li>DIY Tier 2 — Operations Stabilization Framework</li>
+            <li>DIY Tier 3 — Enterprise Scaling Framework</li>
+          </ul>
+          <p class="bundle-includes-header" style="margin-top: 6px;">Plus — Implementation Infrastructure</p>
+          <ul class="bundle-plus-list">
+            <li>Implementation progression roadmap</li>
+            <li>Executive implementation sequence</li>
+            <li>Operational maturity progression</li>
+            <li>Rollout prioritization systems</li>
+            <li>Editable DOCX + PDF formats for all frameworks</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 3: IMPLEMENTATION CONSULTING ──────── -->
+  <section class="programs-section bg-dark" id="consulting">
+    <div class="programs-inner">
+      <div class="programs-header">
+        <span class="section-label">Hands-On Engagement</span>
+        <h2 class="section-title">Implementation Consulting</h2>
+        <p class="section-lead">For operators who want hands-on implementation, operational restructuring, accountability support, and executive operational guidance.</p>
+      </div>
+
+      <div class="consulting-grid">
+
+        <!-- CONSULTING TIER 1 -->
+        <div class="consulting-card">
+          <span class="tier-badge"><span class="tier-badge-dot"></span>Tier 1 Consulting &middot; DIAGNOSE</span>
+          <h3>Operations Audit &amp; Visibility Reset</h3>
+          <div class="card-price">Starting at $750</div>
+          <div class="card-price-note">Engagement-based pricing. Scoped per operation.</div>
+          <ul class="card-includes" style="margin-top: 20px;">
+            <li>Operational review</li>
+            <li>KPI review</li>
+            <li>Workflow analysis</li>
+            <li>Inventory &amp; accountability review</li>
+            <li>Executive findings summary</li>
+            <li>Prioritized implementation plan</li>
+          </ul>
+          <a href="mailto:cannalaunch@gmail.com?subject=Tier 1 Consulting Inquiry" class="btn-card-outline">Schedule Discovery Call</a>
+        </div>
+
+        <!-- CONSULTING TIER 2 -->
+        <div class="consulting-card">
+          <span class="tier-badge"><span class="tier-badge-dot"></span>Tier 2 Consulting &middot; STABILIZE</span>
+          <h3>Operations Stabilization Program</h3>
+          <div class="card-price">Starting at $1,750</div>
+          <div class="card-price-note">Engagement-based pricing. Scoped per operation.</div>
+          <ul class="card-includes" style="margin-top: 20px;">
+            <li>SOP implementation systems</li>
+            <li>Accountability structures</li>
+            <li>Workflow standardization</li>
+            <li>Management cadence systems</li>
+            <li>KPI operational visibility</li>
+            <li>Corrective-action frameworks</li>
+          </ul>
+          <a href="mailto:cannalaunch@gmail.com?subject=Tier 2 Consulting Inquiry" class="btn-card-outline">Schedule Discovery Call</a>
+        </div>
+
+        <!-- CONSULTING TIER 3 -->
+        <div class="consulting-card">
+          <span class="tier-badge"><span class="tier-badge-dot"></span>Tier 3 Consulting &middot; SCALE</span>
+          <h3>Full Operations Reset</h3>
+          <div class="card-price">Starting at $3,500</div>
+          <div class="card-price-note">Engagement-based pricing. Scoped per operation.</div>
+          <ul class="card-includes" style="margin-top: 20px;">
+            <li>Executive operational restructuring</li>
+            <li>Governance systems</li>
+            <li>KPI infrastructure</li>
+            <li>Accountability architecture</li>
+            <li>Executive reporting systems</li>
+            <li>Operational maturity frameworks</li>
+            <li>Multi-location readiness systems</li>
+          </ul>
+          <a href="mailto:cannalaunch@gmail.com?subject=Tier 3 Consulting Inquiry" class="btn-card-outline">Schedule Discovery Call</a>
+        </div>
+
+      </div>
+
+      <!-- MONTHLY ADVISORY -->
+      <div class="consulting-card advisory-card">
+        <div class="advisory-left">
+          <span class="tier-badge"><span class="tier-badge-dot"></span>Monthly Retainer</span>
+          <h3>Monthly Advisory Support</h3>
+          <div class="card-price">$750 – $1,500 <span style="font-size: 1rem; font-weight: 500; color: rgba(137,184,150,0.8);">/ month</span></div>
+          <div class="card-price-note" style="margin-bottom: 20px;">Ongoing. Scoped by operational complexity.</div>
+          <ul class="card-includes" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <li>Monthly KPI reviews</li>
+            <li>Operational performance reviews</li>
+            <li>Accountability oversight</li>
+            <li>SOP refinement</li>
+            <li>Executive operational guidance</li>
+            <li>Ongoing implementation support</li>
+          </ul>
+        </div>
+        <div class="advisory-right">
+          <a href="mailto:cannalaunch@gmail.com?subject=Monthly Advisory Support Inquiry" class="btn-card-outline" style="white-space: nowrap; padding: 14px 28px;">Request Advisory Access</a>
+          <p style="font-size: 0.8rem; color: rgba(255,255,255,0.3); text-align: right; max-width: 200px; line-height: 1.5;">Availability limited. Engagement scoped per operation.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── COMPLETE OPERATIONAL TRANSFORMATION ──────── -->
+  <section class="transformation-section" id="transformation">
+    <div class="transformation-card">
+      <div class="transformation-inner">
+
+        <div>
+          <span class="transformation-badge"><span class="bundle-badge-dot"></span>Full Partnership Engagement</span>
+          <h2>Complete Operational Transformation</h2>
+          <div class="transformation-price">Starting at $5,000</div>
+          <div class="transformation-price-note">Engagement-based. Scoped per operational complexity and timeline.</div>
+          <div class="transformation-best-for">
+            <strong>Best For</strong>
+            Operators needing comprehensive operational restructuring, executive implementation systems, accountability infrastructure, and long-term operational stabilization.
+          </div>
+          <div class="transformation-statement">"We become your operational implementation partner."</div>
+          <a href="mailto:cannalaunch@gmail.com?subject=Complete Operational Transformation — Consultation Request" class="transformation-cta">Request Transformation Consultation</a>
+        </div>
+
+        <div>
+          <p class="transformation-includes-header">Engagement Scope</p>
+          <ul class="transformation-list">
+            <li>Tier 1 operational audit and visibility reset</li>
+            <li>Tier 2 stabilization systems and workflow standardization</li>
+            <li>Tier 3 executive operational restructuring</li>
+            <li>KPI infrastructure build and instrumentation</li>
+            <li>Accountability architecture and ownership systems</li>
+            <li>Governance systems and operational policy frameworks</li>
+            <li>Leadership cadence systems and management rhythm</li>
+            <li>Operational rollout planning and sequencing</li>
+            <li>Executive operational guidance throughout engagement</li>
+            <li>Advisory support window post-implementation</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: CREDIT POLICY ──────────────────── -->
+  <section class="credit-section" id="credit-policy">
+    <div class="credit-inner">
+      <span class="section-label">Consulting Upgrade Pathway</span>
+      <h2 class="section-title">Implementation Credit Policy</h2>
+      <p class="credit-body">Operators who purchase DIY Operational Reset Frameworks may apply part of their purchase toward equivalent-tier or higher-tier implementation consulting engagements within 60 days of purchase. Implementation credits apply toward equivalent-tier or higher-tier consulting engagements only.</p>
+      <p class="credit-body" style="margin-top: 14px;">Credits are designed to support progression into deeper implementation support while maintaining alignment between operational scope and consulting engagement level.</p>
+
+      <div class="credit-table">
+
+        <div class="credit-row">
+          <span class="credit-row-tier">DIY Tier 1 → Consulting Tier 1+</span>
+          <h4>Full Implementation Credit</h4>
+          <p>Full purchase credit applied toward Tier 1 or higher consulting engagements when initiated within 60 days.</p>
+          <span class="credit-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#3d6647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Applied at engagement
+          </span>
+        </div>
+
+        <div class="credit-row">
+          <span class="credit-row-tier">DIY Tier 2 → Consulting Tier 2+</span>
+          <h4>Partial Implementation Credit</h4>
+          <p>Partial implementation credit applied toward Tier 2 or higher consulting engagements when initiated within 60 days.</p>
+          <span class="credit-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#3d6647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Applied at engagement
+          </span>
+        </div>
+
+        <div class="credit-row">
+          <span class="credit-row-tier">DIY Tier 3 → Consulting Tier 3</span>
+          <h4>Premium Implementation Credit</h4>
+          <p>Premium implementation credit applied toward Tier 3 consulting engagements when initiated within 60 days.</p>
+          <span class="credit-arrow">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#3d6647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Applied at engagement
+          </span>
+        </div>
+
+      </div>
+
+      <div class="credit-note">
+        <strong>This is an operational onboarding credit — not a promotional discount.</strong> Operators who complete DIY frameworks arrive at consulting engagements with operational context already established. Credit is applied at the time of engagement scoping. Contact us within 60 days of DIY purchase to initiate.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION 5: WHY IMPLEMENTATION MATTERS ─────── -->
+  <section class="implementation-section" id="why-implementation">
+    <div class="implementation-inner">
+      <div style="max-width: 680px; margin-bottom: 56px;">
+        <span class="section-label">Operational Intelligence</span>
+        <h2 class="section-title">Why Implementation Determines Outcomes</h2>
+      </div>
+
+      <div class="impl-grid">
+        <div class="impl-left">
+          <p class="impl-statement">"Operational systems only create value when they are consistently executed."</p>
+          <p class="impl-body">Documentation without implementation creates operational drift. Teams revert to informal habits. Standards become aspirational rather than operational. The gap between what a business says it does and what it actually does widens over time — and that gap is where performance, accountability, and profitability erode.</p>
+          <p class="impl-body">Implementation is the work of converting systems into consistent behavior. It requires structured accountability, visible KPI feedback loops, management cadence, and leadership that enforces standards — not just documents them.</p>
+          <p class="impl-statement" style="margin-top: 28px;">"Accountability without visibility is management theater."</p>
+          <p class="impl-body">Holding teams accountable requires operational visibility — KPIs that surface in real time, performance data that informs decisions, and reporting structures that keep leadership informed before problems become patterns.</p>
+        </div>
+
+        <div class="impl-right">
+          <div class="impl-pillar">
+            <h4>Accountability Architecture</h4>
+            <p>Defined ownership, escalation pathways, and consequence structures that make accountability a system — not a conversation that happens after something goes wrong.</p>
+          </div>
+          <div class="impl-pillar">
+            <h4>Operational Consistency</h4>
+            <p>Execution that holds across shifts, managers, and days of the week. Consistency is the only reliable predictor of operational quality at scale.</p>
+          </div>
+          <div class="impl-pillar">
+            <h4>KPI Infrastructure</h4>
+            <p>Performance measurement frameworks that give leadership visibility into what is working, what is degrading, and where intervention is required — before the problem compounds.</p>
+          </div>
+          <div class="impl-pillar">
+            <h4>Management Cadence</h4>
+            <p>Structured operational rhythms — daily reviews, shift handoffs, weekly accountability cycles — that replace reactive management with proactive operational oversight.</p>
+          </div>
+          <div class="impl-pillar">
+            <h4>Leadership Execution</h4>
+            <p>Operational leadership is not organizational presence. It is the deliberate, systematic enforcement of standards by people who understand the systems they are executing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 6: FINAL CTA ──────────────────────── -->
+  <section class="final-cta">
+    <div class="final-cta-inner">
+      <span class="section-label" style="color: var(--sage);">Take the Next Step</span>
+      <h2 class="section-title">Ready To Improve Operational Execution?</h2>
+      <p>Start with a DIY framework and implement internally, or schedule a discovery call to explore whether a consulting engagement makes sense for your operation. Either path moves you forward.</p>
+      <div class="cta-buttons">
+        <a href="mailto:cannalaunch@gmail.com" class="btn-primary-light">Book a Discovery Call</a>
+        <a href="cannalaunch_shop.html" class="btn-shop-light">Explore Operational Systems</a>
+      </div>
+      <p class="cta-note">No commitment required. Discovery calls are scoped, not sales calls.</p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────── -->
+  <footer class="site-footer">
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-rule"></div>
+    <p class="footer-copy">© 2026 CannaLaunch. Educational business systems and operational resources. Not legal, tax, accounting, or regulatory advice.</p>
+  </footer>
+
+  <script src="referral.js"></script>
+</body>
+</html>
