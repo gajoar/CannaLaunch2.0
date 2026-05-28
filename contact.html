@@ -29,6 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -315,6 +316,28 @@
       margin-top: 12px;
       line-height: 1.6;
     }
+    .form-status {
+      display: none;
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.55;
+      margin-top: 14px;
+      text-align: center;
+    }
+    .form-status.success {
+      display: block;
+      background: rgba(61,102,71,0.1);
+      border: 1px solid rgba(61,102,71,0.3);
+      color: var(--green-accent);
+    }
+    .form-status.error {
+      display: block;
+      background: rgba(217,79,79,0.08);
+      border: 1px solid rgba(217,79,79,0.25);
+      color: #b94040;
+    }
 
     @media (max-width: 768px) {
       .contact-wrap { grid-template-columns: 1fr; gap: 36px; padding: 52px 4% 64px; }
@@ -397,7 +420,7 @@
     <!-- RIGHT: Form -->
     <div class="contact-form-card">
       <h2>Send a Message</h2>
-      <form action="mailto:cannalaunch@gmail.com" method="POST" enctype="text/plain">
+      <form id="contact-form" novalidate>
         <div class="form-group">
           <label for="name">Your Name</label>
           <input type="text" id="name" name="name" placeholder="First and last name" required />
@@ -423,8 +446,9 @@
         </div>
         <!-- Hidden referral tracking field — filled automatically by referral.js -->
         <input type="hidden" name="referral_source" value="" />
-        <button type="submit" class="form-submit">Send Message</button>
-        <p class="form-note">This will open your email client. You can also reach us directly at cannalaunch@gmail.com</p>
+        <button type="submit" id="form-submit-btn" class="form-submit">Send Message</button>
+        <div id="form-status" class="form-status"></div>
+        <p class="form-note">We typically respond within 1–2 business days.</p>
       </form>
     </div>
 
@@ -444,5 +468,65 @@
   </footer>
 
   <script src="referral.js"></script>
+  <script>
+    emailjs.init({ publicKey: '7bNOgA9DMqzrlNbeC' });
+
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var name    = document.getElementById('name').value.trim();
+      var email   = document.getElementById('email').value.trim();
+      var subject = document.getElementById('subject').value;
+      var message = document.getElementById('message').value.trim();
+      var status  = document.getElementById('form-status');
+      var btn     = document.getElementById('form-submit-btn');
+
+      // Reset status
+      status.className  = 'form-status';
+      status.textContent = '';
+
+      // Validate all fields
+      if (!name || !email || !subject || !message) {
+        status.className  = 'form-status error';
+        status.textContent = 'Please fill in all fields before sending.';
+        return;
+      }
+
+      // Basic email format check
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        status.className  = 'form-status error';
+        status.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      btn.disabled    = true;
+      btn.textContent = 'Sending…';
+
+      emailjs.send(
+        'service_odmo31r',
+        'template_reni2ve',
+        {
+          from_name:  name,
+          from_email: email,
+          subject:    subject,
+          message:    message,
+        },
+        {
+          publicKey: '7bNOgA9DMqzrlNbeC',
+        }
+      ).then(function () {
+        status.className  = 'form-status success';
+        status.textContent = "Message sent successfully. I'll get back to you soon.";
+        document.getElementById('contact-form').reset();
+        btn.disabled    = false;
+        btn.textContent = 'Send Message';
+      }).catch(function () {
+        status.className  = 'form-status error';
+        status.textContent = 'Something went wrong. Please email cannalaunch@gmail.com directly.';
+        btn.disabled    = false;
+        btn.textContent = 'Send Message';
+      });
+    });
+  </script>
 </body>
 </html>
