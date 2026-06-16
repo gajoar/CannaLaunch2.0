@@ -41,7 +41,7 @@
 
   var VENDORS = {
 
-    'mike': {
+    'korey': {
       'P6dxr': 'https://payhip.com/b/P6dxr?affiliate=MIKE_AFFILIATE_CODE',  // Operators Blueprint
       'wAyCx': 'https://payhip.com/b/wAyCx?affiliate=MIKE_AFFILIATE_CODE',  // Full Operations Playbook
       'UT8HP': 'https://payhip.com/b/UT8HP?affiliate=MIKE_AFFILIATE_CODE',  // KPI Dashboard
